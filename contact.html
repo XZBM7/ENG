@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* جميع التنسيقات الموجودة كما هي */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #003d7a;
+            border-radius: 5px;
+            transform: scale(1.1);
+
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease;
+
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .contact-info .info,
+        .contact-info .map {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-info .info:hover,
+        .contact-info .map:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info .info h2 {
+            color: #28a745;
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .contact-info .info p {
+            line-height: 1.6;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .contact-info .info .social-icons {
+            margin-top: 15px;
+        }
+
+        .contact-info .info .social-icons a {
+            color: #333;
+            text-decoration: none;
+            font-size: 20px;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info .info .social-icons a:hover {
+            color: #007BFF;
+        }
+
+        .contact-info .map iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .contact-form h2 {
+            color: #007BFF;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #0056b3;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            line-height: 60px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #0056b3;
+        }
+
+        .scroll-to-top i {
+            font-size: 24px;
+        }
+
+        .message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .confirmation-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        عقارات
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"> المفضلة</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="villas.html">الفلل</a></li>
+            <li><a href="apartments.html">الشقق</a></li>
+            <li><a href="about.html">عن الشركة</a></li>
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>تواصل معنا</h1>
+
+        <div class="contact-info">
+            <div class="info">
+                <h2>معلومات الاتصال</h2>
+                <p>الهاتف: 0123456789</p>
+                <p>البريد الإلكتروني: contact@realestate.com</p>
+                <p>ساعات العمل: من الأحد إلى الخميس، 9 صباحاً - 6 مساءً</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/yourpage" target="_blank" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank" title="إنستغرام"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/0123456789" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="map">
+                <h2>الموقع</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3088.510142724769!2d-77.03687068458288!3d38.90719297957081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b768013ebff1%3A0x22a851d20a19c6b!2s1600%20Pennsylvania%20Ave%20NW%2C%20Washington%2C%20DC%2020500!5e0!3m2!1sen!2sus!4v1615895871230!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe> </div> </div>
+        <div class="contact-form">
+            <h2>اترك لنا رسالة</h2>
+            <form id="contactForm">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" pattern="[أ-يa-zA-Z\s]+" title="الاسم يجب أن يحتوي على أحرف عربية أو إنجليزية فقط." required>
+        
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" name="phone" pattern="05\d{8}" title="رقم الهاتف يجب أن يبدأ بـ 05 ويتكون من 10 أرقام." required>
+        
+                <label for="message">الرسالة:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+        
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024</p>
+        <p>للتواصل: contact@realestate.com | هاتف: 0123456789</p>     </footer>
+    
+    <div class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    
+    <div class="message" id="message">تم الإرسال بنجاح</div>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollToTopBtn = document.querySelector('.scroll-to-top');
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {  
+            var form = document.querySelector('.contact-form form');
+            var button = form.querySelector('button');
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                // Display confirmation message
+                var confirmationBox = document.createElement('div');
+                confirmationBox.textContent = 'تم الإرسال بنجاح، شكراً لإرسال الرسالة';
+                confirmationBox.classList.add('confirmation-box');
+                document.body.appendChild(confirmationBox);
+
+                // Hide confirmation message after 3 seconds and reset form
+                setTimeout(function() {
+                    confirmationBox.style.opacity = '0';
+                    setTimeout(function() {
+                        confirmationBox.remove();
+                        form.reset(); // Clear form fields
+                    }, 500);
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

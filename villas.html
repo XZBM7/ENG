@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفلل</title>
+    <!-- تضمين Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #003d7a;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* قسم العقارات المتوفرة */
+        .available-properties {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .available-properties h2 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        /* تصميم الشبكة مع استجابة لحجم الشاشة */
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        @media (min-width: 900px) {
+            .properties-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .property {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .property:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .property a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .property img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .property-info {
+            padding: 15px;
+        }
+
+        .property-info h2 {
+            margin-top: 0;
+            color: #007BFF;
+            font-size: 18px;
+        }
+
+        .property-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .property-info hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 10px 0;
+        }
+
+        .property-info .price {
+            color: #28a745; /* اللون الأخضر */
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .details {
+            margin-top: 10px;
+        }
+
+        .details p {
+            margin: 5px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* لإضافة مسافة بين الأيقونات والنص */
+        }
+
+        .details .icon {
+            font-size: 18px; /* تصغير حجم الإيموجي */
+        }
+
+        .contact-buttons {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .contact-buttons a {
+            text-decoration: none;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+        }
+
+        .contact-buttons a.whatsapp {
+            background-color: #25D366;
+        }
+
+        .contact-buttons a.whatsapp:hover {
+            background-color: #1DA851;
+        }
+
+        .contact-buttons a.phone {
+            background-color: #007BFF;
+        }
+
+        .contact-buttons a.phone:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-buttons a.favorite {
+            background-color: #ff4081;
+        }
+
+        .contact-buttons a.favorite:hover {
+            background-color: #e00063;
+        }
+
+        footer {
+            background-color: #0056b3;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    line-height: 60px;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+}
+
+.scroll-to-top i {
+    font-size: 24px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        عقارات
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"> المفضلة</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="villas.html">الفلل</a></li>
+            <li><a href="apartments.html">الشقق</a></li>
+            <li><a href="about.html">عن الشركة</a></li>
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+        </ul>
+    </nav>
+
+    <div class="available-properties">
+        <h2>الفلل المتاحة</h2>
+        <div id="latest-properties" class="properties-grid">
+            <!-- العقارات سيتم تحميلها ديناميكياً هنا -->
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024</p>
+        <p>للتواصل: contact@realestate.com | هاتف: 0123456789</p>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    <script>
+        const content = [
+            {
+                image: "apartment1.jpg",
+                title: "شقة فاخرة في المدينة",
+                description: "شقة جديدة تحتوي على 3 غرف نوم.",
+                price: "400,000 ريال",
+                area: "200 متر مربع",
+                bathrooms: 2,
+                bedrooms: 3,
+                livingRooms: 1,
+                location: "المدينة",
+                link: "apartment1.html"
+            },
+            {
+                image: "apartment2.jpg",
+                title: "شقة أنيقة",
+                description: "شقة حديثة تحتوي على 2 غرف نوم.",
+                price: "350,000 ريال",
+                area: "180 متر مربع",
+                bathrooms: 1,
+                bedrooms: 2,
+                livingRooms: 1,
+                location: "المدينة",
+                link: "apartment2.html"
+            },
+            {
+                image: "apartment3.jpg",
+                title: "شقة مع إطلالة رائعة",
+                description: "شقة مميزة بإطلالة على المدينة.",
+                price: "450,000 ريال",
+                area: "220 متر مربع",
+                bathrooms: 3,
+                bedrooms: 4,
+                livingRooms: 2,
+                location: "المدينة",
+                link: "apartment3.html"
+            },
+            {
+                image: "apartment3.jpg",
+                title: "شقة مع إطلالة رائعة",
+                description: "شقة مميزة بإطلالة على المدينة.",
+                price: "450,000 ريال",
+                area: "220 متر مربع",
+                bathrooms: 3,
+                bedrooms: 4,
+                livingRooms: 2,
+                location: "المدينة",
+                link: "apartment3.html"
+            },
+            {
+                image: "apartment3.jpg",
+                title: "شقة مع إطلالة رائعة",
+                description: "شقة مميزة بإطلالة على المدينة.",
+                price: "450,000 ريال",
+                area: "220 متر مربع",
+                bathrooms: 3,
+                bedrooms: 4,
+                livingRooms: 2,
+                location: "المدينة",
+                link: "apartment3.html"
+            },
+            {
+                image: "apartment3.jpg",
+                title: "شقة مع إطلالة رائعة",
+                description: "شقة مميزة بإطلالة على المدينة.",
+                price: "450,000 ريال",
+                area: "220 متر مربع",
+                bathrooms: 3,
+                bedrooms: 4,
+                livingRooms: 2,
+                location: "المدينة",
+                link: "apartment3.html"
+            },
+            {
+                image: "apartment3.jpg",
+                title: "شقة مع إطلالة رائعة",
+                description: "شقة مميزة بإطلالة على المدينة.",
+                price: "450,000 ريال",
+                area: "220 متر مربع",
+                bathrooms: 3,
+                bedrooms: 4,
+                livingRooms: 2,
+                location: "المدينة",
+                link: "apartment3.html"
+            }
+        ];
+
+        // تحميل العقارات إلى الصفحة
+        const propertiesContainer = document.getElementById('latest-properties');
+
+        content.forEach(property => {
+            const propertyElement = document.createElement('div');
+            propertyElement.classList.add('property');
+
+            propertyElement.innerHTML = `
+                <a href="${property.link}">
+                    <img src="${property.image}" alt="${property.title}">
+                </a>
+                <hr>
+                <div class="property-info">
+                    <h2>${property.title}</h2>
+                    <p>${property.description}</p>
+                    <p class="price">${property.price}</p>
+                    <div class="details">
+                            <p><span class="icon">📍</span> الرياض</p>
+                            <p><span class="icon">📏</span> 250 م²</p>
+                            <p><span class="icon">🛁</span> 3 حمام</p>
+                            <p><span class="icon">🛏️</span> 4 غرف نوم</p>
+                            <p><span class="icon">🛋️</span> 1 غرفة معيشة</p>
+                    </div>
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/0123456789" class="whatsapp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+0123456789" class="phone" title="اتصال"><i class="fas fa-phone"></i></a>
+                        <a href="#" class="favorite" title="إضافة إلى المفضلة"><i class="fas fa-heart"></i></a>
+                    </div>
+                </div>
+            `;
+
+            propertiesContainer.appendChild(propertyElement);
+        });
+
+        window.addEventListener('scroll', function() {
+            const scrollToTopBtn = document.querySelector('.scroll-to-top');
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
