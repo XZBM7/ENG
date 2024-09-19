@@ -156,7 +156,7 @@
 
         .property img {
             width: 100%;
-            height: 280px;
+            height: 150px;
             object-fit: cover;
             display: block;
         }
@@ -594,7 +594,7 @@
 
         .about-image img {
             max-width: 100%;
-            height: 400px;
+            height: auto;
             border-radius: 10px;
         }
 
@@ -626,7 +626,7 @@
 
         .vision-image img {
             width: 100%;
-            height: 500px;
+            height: auto;
             max-height: 700px;
             object-fit: cover;
         }
@@ -688,6 +688,19 @@
             font-size: 20px;
             color: #007BFF;
         }
+        .favorite {
+  cursor: pointer;
+}
+
+#like-count {
+  margin-left: 10px;
+}
+.favorite.liked i {
+    color: rgb(11, 46, 204); 
+}
+
+
+
     </style>
 </head>
 
@@ -698,7 +711,6 @@
 
     <nav>
         <ul>
-            <li><a href="index.html"> المفضلة</a></li>
             <li><a href="contact.html">اتصل بنا</a></li>
             <li><a href="villas.html">الفلل</a></li>
             <li><a href="apartments.html">الشقق</a></li>
@@ -711,7 +723,7 @@
     </nav>
 
     <section class="banner">
-        <img src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="شركة عقارات" class="banner-image">
+        <img src="https://via.placeholder.com/1200x400" alt="شركة عقارات" class="banner-image">
     </section>
 
 
@@ -722,85 +734,89 @@
             </section>
             <div class="available-properties-grid">
                 <a href="villas.html">
-                    <img src="https://imgs.search.brave.com/vrS-HHDZwbqXdwO6wHXYB0nYenDJ6Kpv379Ay7lJAyw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxtcnNhbC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvTW9kZWxzLUZh/Y2FkZXMtVmlsbGFz/LmpwZw" alt="Property 1" >
+                    <img src="https://via.placeholder.com/300x200" alt="Property 1">
                     <p> الفلل</p>
                 </a>
                 <a href="apartments.html">
-                    <img src="https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn" alt="Property 2">
+                    <img src="https://via.placeholder.com/300x200" alt="Property 2">
                     <p>الشقق</p>
                 </a>
             </div>
         </div>
 
-        <div class="latest-properties" id="latest-properties">
-            <h1>أحدث العقارات</h1>
-            <div class="latest-properties-grid">
-                <div class="property">
-                    <a href="#">
-                        <img src="https://imgs.search.brave.com/VWtMnwf1GV-6Xu6eSQJr9XdQ-q1XgiycheesZZnkOsg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vo/eWM4TlkwVVBZTlVy/NjY0cFphTm5HNkhL/SURsNDJqZDJHZkt6/S3NpZDNCcWpjYjlF/YUs4cVltRUVza2Yy/Q0lycmFhNHV5M1d1/QTdVYjR4c2NnUDJG/eGYzN2NBd2Y3NzNo/SnZIem52Rm5DZnRa/MmxDbFlGTGdlVXo1/VEF1ZzFpN2Q4S0d2/M3dBdDlUZjQvdzQw/MC1oMjU1LXJ3LzIz/NzAuanBn" alt="Property 1">
-                        <div class="property-info">
-                            <h2>فيلا فاخرة في الرياض</h2>
-                            <p class="price">1,200,000 ريال</p>
-                            <p><span class="icon">📍</span> الرياض</p>
-                            <p><span class="icon">📏</span> 250 م²</p>
-                            <p><span class="icon">🛁</span> 3 حمام</p>
-                            <p><span class="icon">🛏️</span> 4 غرف نوم</p>
-                            <p><span class="icon">🛋️</span> 1 غرفة معيشة</p>
-                            <hr>
-                            <div class="contact-buttons">
-                                <a href="https://wa.me/0123456789" class="whatsapp" title="واتساب"><i
-                                        class="fab fa-whatsapp"></i></a>
-                                <a href="tel:+0123456789" class="phone" title="اتصال"><i class="fas fa-phone"></i></a>
-                                <a href="#" class="favorite" title="إضافة إلى المفضلة"><i class="fas fa-heart"></i></a>
-                            </div>
+        <div class="latest-properties-grid">
+            <div class="property">
+                <a href="#">
+                    <img src="https://via.placeholder.com/400x250" alt="Property 1">
+                    <div class="property-info">
+                        <h2>فيلا فاخرة في الرياض</h2>
+                        <p class="price">1,200,000 ريال</p>
+                        <p><i class="fas fa-map-marker-alt"></i> الرياض</p>
+                        <p><i class="fas fa-ruler-horizontal"></i> 250 م²</p>
+                        <p><i class="fas fa-bath"></i> 3 حمام</p>
+                        <p><i class="fas fa-bed"></i> 4 غرف نوم</p>
+                        <p><i class="fas fa-couch"></i> 1 غرفة معيشة</p>
+                        <hr>
+                        <div class="contact-buttons">
+                            <a href="https://wa.me/0123456789" class="whatsapp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                            <a href="tel:+0123456789" class="phone" title="اتصال"><i class="fas fa-phone"></i></a>
+                            <a href="#" class="favorite" title="إضافة إلى المفضلة" id="like-button-1">
+                                <i class="fas fa-thumbs-up"></i>
+                            </a>
+                            <span id="like-count-1">0</span>
                         </div>
-                    </a>
-                </div>
-                <div class="property">
-                    <a href="#">
-                        <img src="https://imgs.search.brave.com/f2QwxcbC-XmsXVODY9VlO8twseDxY5j9UxZ7WNoyoJ0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vp/bm9nbDZhNm1SSjBx/RUp4Ym1EbVV4VkEt/azRtbUlLX0NPWDFs/VHI2dXVHa21TWXl3/bm4wcFAxcUxOcTlI/akp1cHYxcGdVSENp/SVk0aUJqVE5CY3dw/Zk5Qb2hxby1vcWJE/empPaHU2M085a3ZK/MmVqdmtNUDNqLWQ5/Z3lfbTBIbzAwdzZU/YWxxQmF4MXMvdzQw/MC1oMjg0LXJ3LzI5/NzIuanBn" alt="Property 1">
-                        <div class="property-info">
-                            <h2>فيلا فاخرة في الرياض</h2>
-                            <p class="price">1,200,000 ريال</p>
-                            <p><span class="icon">📍</span> الرياض</p>
-                            <p><span class="icon">📏</span> 250 م²</p>
-                            <p><span class="icon">🛁</span> 3 حمام</p>
-                            <p><span class="icon">🛏️</span> 4 غرف نوم</p>
-                            <p><span class="icon">🛋️</span> 1 غرفة معيشة</p>
-                            <hr>
-                            <div class="contact-buttons">
-                                <a href="https://wa.me/0123456789" class="whatsapp" title="واتساب"><i
-                                        class="fab fa-whatsapp"></i></a>
-                                <a href="tel:+0123456789" class="phone" title="اتصال"><i class="fas fa-phone"></i></a>
-                                <a href="#" class="favorite" title="إضافة إلى المفضلة"><i class="fas fa-heart"></i></a>
-                            </div>
+                    </div>
+                </a>
+            </div>
+            <div class="property">
+                <a href="#">
+                    <img src="https://via.placeholder.com/400x250" alt="Property 2">
+                    <div class="property-info">
+                        <h2>فيلا فاخرة في جدة</h2>
+                        <p class="price">1,500,000 ريال</p>
+                        <p><i class="fas fa-map-marker-alt"></i> جدة</p>
+                        <p><i class="fas fa-ruler-horizontal"></i> 300 م²</p>
+                        <p><i class="fas fa-bath"></i> 4 حمام</p>
+                        <p><i class="fas fa-bed"></i> 5 غرف نوم</p>
+                        <p><i class="fas fa-couch"></i> 2 غرفة معيشة</p>
+                        <hr>
+                        <div class="contact-buttons">
+                            <a href="https://wa.me/0123456789" class="whatsapp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                            <a href="tel:+0123456789" class="phone" title="اتصال"><i class="fas fa-phone"></i></a>
+                            <a href="#" class="favorite" title="إضافة إلى المفضلة" id="like-button-2">
+                                <i class="fas fa-thumbs-up"></i>
+                            </a>
+                            <span id="like-count-2">0</span>
                         </div>
-                    </a>
-                </div>
-                <div class="property">
-                    <a href="#">
-                        <img src="https://imgs.search.brave.com/vrS-HHDZwbqXdwO6wHXYB0nYenDJ6Kpv379Ay7lJAyw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxtcnNhbC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvTW9kZWxzLUZh/Y2FkZXMtVmlsbGFz/LmpwZw" alt="Property 1">
-                        <div class="property-info">
-                            <h2>فيلا فاخرة في الرياض</h2>
-                            <p class="price">1,200,000 ريال</p>
-                            <p><span class="icon">📍</span> الرياض</p>
-                            <p><span class="icon">📏</span> 250 م²</p>
-                            <p><span class="icon">🛁</span> 3 حمام</p>
-                            <p><span class="icon">🛏️</span> 4 غرف نوم</p>
-                            <p><span class="icon">🛋️</span> 1 غرفة معيشة</p>
-                            <hr>
-                            <div class="contact-buttons">
-                                <a href="https://wa.me/0123456789" class="whatsapp" title="واتساب"><i
-                                        class="fab fa-whatsapp"></i></a>
-                                <a href="tel:+0123456789" class="phone" title="اتصال"><i class="fas fa-phone"></i></a>
-                                <a href="#" class="favorite" title="إضافة إلى المفضلة"><i class="fas fa-heart"></i></a>
-                            </div>
+                    </div>
+                </a>
+            </div>
+            <div class="property">
+                <a href="#">
+                    <img src="https://via.placeholder.com/400x250" alt="Property 3">
+                    <div class="property-info">
+                        <h2>فيلا فاخرة في الدمام</h2>
+                        <p class="price">900,000 ريال</p>
+                        <p><i class="fas fa-map-marker-alt"></i> الدمام</p>
+                        <p><i class="fas fa-ruler-horizontal"></i> 200 م²</p>
+                        <p><i class="fas fa-bath"></i> 2 حمام</p>
+                        <p><i class="fas fa-bed"></i> 3 غرف نوم</p>
+                        <p><i class="fas fa-couch"></i> 1 غرفة معيشة</p>
+                        <hr>
+                        <div class="contact-buttons">
+                            <a href="https://wa.me/0123456789" class="whatsapp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                            <a href="tel:+0123456789" class="phone" title="اتصال"><i class="fas fa-phone"></i></a>
+                            <a href="#" class="favorite" title="إضافة إلى المفضلة" id="like-button-3">
+                                <i class="fas fa-thumbs-up"></i>
+                            </a>
+                            <span id="like-count-3">0</span>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
-
+        
+            
 
         <section id="about-us" style="padding: 50px 0;">
             <div class="container">
@@ -815,7 +831,7 @@
                         <a href="about.html" class="btn-learn-more">اعرف أكثر</a>
                     </div>
                     <div class="about-image">
-                        <img src="https://img.freepik.com/free-photo/formal-people-with-gadgets-meeting_23-2147656694.jpg?t=st=1726749666~exp=1726753266~hmac=7527b863893b7dba74d1a159a18d7f1bf426303ee15b5b28c6dd762b63f29238&w=1380" alt="نبذة عن الشركة" />
+                        <img src="your-image.jpg" alt="نبذة عن الشركة" />
                     </div>
                 </div>
             </div>
@@ -823,7 +839,7 @@
 
         <section id="vision" style="padding: 0;">
             <div class="vision-image">
-                <img src="https://images.pexels.com/photos/5313173/pexels-photo-5313173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="رؤيتنا" />
+                <img src="vision-image.jpg" alt="رؤيتنا" />
             </div>
         </section>
 
@@ -838,22 +854,22 @@
             <div class="project-carousel swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide project-item">
-                        <img src="https://imgs.search.brave.com/OURLJN72EK36cFX11RlFNQaCCe98UkoLsTNdSsyex_g/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bWV4YXRrLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/MS8lRDklODElRDkl/ODQlRDklODQtJUQ4/JUI1JUQ5JTg4JUQ4/JUIxLTIuanBn" alt="مشروع 1" />
+                        <img src="project1.jpg" alt="مشروع 1" />
                         <h3>مشروع 1</h3>
                         <p>وصف قصير عن المشروع...</p>
                     </div>
                     <div class="swiper-slide project-item">
-                        <img src="https://imgs.search.brave.com/2g4BwewdYp5kkXOHJA7lQ6-vOZiubZWNYFhP1xSL57A/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bWV4YXRrLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/MS8lRDglQjUlRDkl/ODglRDglQjEtJUQ5/JTgxJUQ5JTg0JUQ5/JTg0LTMtODAweDU1/MC5qcGc" alt="مشروع 1" />
+                        <img src="project1.jpg" alt="مشروع 1" />
                         <h3>مشروع 1</h3>
                         <p>وصف قصير عن المشروع...</p>
                     </div>
                     <div class="swiper-slide project-item">
-                        <img src="https://imgs.search.brave.com/ne7pWS16iUepn-deQjwm1XrRqJdbQ0evRfQLHEtLc78/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90d2lj/ZS5tYS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMi8xMS8xNjY4/NzE2NjE2XzY5MF8l/RDglQjUlRDklODgl/RDglQjEtJUQ4JUFG/JUQ5JThBJUQ5JTgz/JUQ5JTg4JUQ4JUIx/LSVEOCVCNCVEOSU4/MiVEOSU4Mi0yMDIz/LSVEOCVBRiVEOSU4/QSVEOSU4MyVEOSU4/OCVEOCVCMSVEOCVB/NyVEOCVBQS0lRDgl/QjQlRDklODIlRDkl/ODItJUQ5JTg0JUQ5/JTg0JUQ4JUI5JUQ4/JUIxJUQ4JUE3JUQ4/JUE2JUQ4JUIzLmpw/Zw" alt="مشروع 1" />
+                        <img src="project1.jpg" alt="مشروع 1" />
                         <h3>مشروع 1</h3>
                         <p>وصف قصير عن المشروع...</p>
                     </div>
                     <div class="swiper-slide project-item">
-                        <img src="https://imgs.search.brave.com/H2sqqFkejxU5vtf9RXJ5vpSbk70IDKrXuth2hMeAoQ4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bWV4YXRrLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/MS8lRDglQjUlRDkl/ODglRDglQjEtJUQ5/JTgxJUQ5JTg0JUQ5/JTg0LTItODAweDYw/MC5qcGc" alt="مشروع 2" />
+                        <img src="project2.jpg" alt="مشروع 2" />
                         <h3>مشروع 2</h3>
                         <p>وصف قصير عن المشروع...</p>
                     </div>
@@ -924,6 +940,50 @@
 
 
     <script>
+ 
+
+ document.addEventListener('DOMContentLoaded', () => {
+    const propertyIds = ['1', '2', '3']; 
+    const userId = 'user-id'; 
+
+    propertyIds.forEach(id => {
+        const likeButton = document.getElementById(`like-button-${id}`);
+        const likeCountElement = document.getElementById(`like-count-${id}`);
+        
+        const userLikedKey = `userLiked-${userId}-${id}`;
+        let hasUserLiked = localStorage.getItem(userLikedKey) === 'true';
+
+        let likeCount = parseInt(localStorage.getItem(`likeCount-${id}`)) || 0;
+        likeCountElement.textContent = likeCount;
+
+        if (hasUserLiked) {
+            likeButton.classList.add('liked');
+        }
+
+        likeButton.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            if (hasUserLiked) {
+                likeCount--;
+                localStorage.setItem(`likeCount-${id}`, likeCount);
+                likeButton.classList.remove('liked');
+                localStorage.removeItem(userLikedKey);
+                hasUserLiked = false;
+            } else {
+                likeCount++;
+                localStorage.setItem(`likeCount-${id}`, likeCount);
+                likeButton.classList.add('liked');
+                localStorage.setItem(userLikedKey, 'true');
+                hasUserLiked = true;
+            }
+
+            likeCountElement.textContent = likeCount;
+        });
+    });
+});
+
+
+
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
