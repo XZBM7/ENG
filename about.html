@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,8 +61,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         h1 {
@@ -101,7 +107,7 @@
         }
 
         .service {
-            flex: 1 1 calc(33.333% - 20px); 
+            flex: 1 1 calc(33.333% - 20px);
             max-width: 300px;
             background-color: #fff;
             padding: 15px;
@@ -220,7 +226,6 @@
             font-size: 24px;
         }
 
-        /* Responsive styles */
         @media (min-width: 768px) {
             nav ul {
                 flex-direction: row;
@@ -238,6 +243,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <i class="fas fa-building"></i>
@@ -248,9 +254,8 @@
             <li><a href="contact.html">اتصل بنا</a></li>
             <li><a href="villas.html">الفلل</a></li>
             <li><a href="apartments.html">الشقق</a></li>
-            <li><a href="about.html">اخر الاخبار </a></li>
-            <li><a href="about.html">عن الشركة</a></li>
-            <li><a href="#projects">مشاريعنا</a></li>
+            <li><a href="news.html">اخر الاخبار </a></li>
+            <li><a href="projects.html">مشاريعنا</a></li>
             <li><a href="index.html"> الرئيسية</a></li>
         </ul>
     </nav>
@@ -260,14 +265,18 @@
 
         <div class="section">
             <h2>من نحن</h2>
-            <p>نحن شركة عقارية معروفة تتمتع بخبرة تفوق 20 عامًا في تطوير وبناء وتسويق العقارات السكنية والتجارية. نلتزم بتقديم أعلى مستويات الجودة والابتكار في جميع مشاريعنا لضمان رضا العملاء وتلبية احتياجاتهم.</p>
-            <img src="company_building.jpg" alt="مبنى الشركة" style="width: 100%; height: auto; margin-top: 10px; border-radius: 10px;">
+            <p>نحن شركة عقارية معروفة تتمتع بخبرة تفوق 20 عامًا في تطوير وبناء وتسويق العقارات السكنية والتجارية. نلتزم
+                بتقديم أعلى مستويات الجودة والابتكار في جميع مشاريعنا لضمان رضا العملاء وتلبية احتياجاتهم.</p>
+            <img src="company_building.jpg" alt="مبنى الشركة"
+                style="width: 100%; height: auto; margin-top: 10px; border-radius: 10px;">
         </div>
 
         <div class="section">
             <h2>رؤيتنا</h2>
-            <img src="vision_image.jpg" alt="رؤيتنا" style="width: 100%; height: auto; margin-bottom: 15px; border-radius: 10px;">
-            <p>نسعى لنكون الشركة الرائدة في مجال العقارات على مستوى المنطقة، مع التركيز على تقديم الحلول المتكاملة والمبتكرة لعملائنا.</p>
+            <img src="vision_image.jpg" alt="رؤيتنا"
+                style="width: 100%; height: auto; margin-bottom: 15px; border-radius: 10px;">
+            <p>نسعى لنكون الشركة الرائدة في مجال العقارات على مستوى المنطقة، مع التركيز على تقديم الحلول المتكاملة
+                والمبتكرة لعملائنا.</p>
             <a href="vision.html" class="learn-more">اعرف اكثر</a>
         </div>
 
@@ -344,7 +353,7 @@
             });
         }
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const scrollToTopBtn = document.querySelector('.scroll-to-top');
             if (window.scrollY > 300) {
                 scrollToTopBtn.style.display = 'block';
@@ -354,4 +363,5 @@
         });
     </script>
 </body>
+
 </html>
