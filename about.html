@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <title>عن الشركة</title>
     <style>
         body {
@@ -17,15 +16,12 @@
         }
 
         header {
-            background-color: #007BFF;
+            background-color: #112031;
             color: white;
-            padding: 15px 0;
+            padding: 20px;
             text-align: center;
             font-size: 24px;
             font-weight: bold;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
 
         nav ul {
@@ -35,16 +31,17 @@
             display: flex;
             justify-content: center;
             background-color: #0056b3;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 15px 20px;
             display: block;
             transition: all 0.3s ease;
         }
@@ -76,7 +73,7 @@
         .section {
             background-color: white;
             padding: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -97,73 +94,99 @@
             color: #555;
         }
 
-        .team {
+        .services {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .team-member {
-            width: 30%;
+        .service {
+            flex: 1 1 calc(33.333% - 20px); 
+            max-width: 300px;
             background-color: #fff;
             padding: 15px;
-            margin-bottom: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 auto;
         }
 
-        .team-member:hover {
+        .service:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .team-member img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .team-member h3 {
-            margin: 0;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .team-member p {
-            color: #888;
-        }
-
-        .partners {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .partner-logo {
-            width: 30%;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .partner-logo img {
-            width: 150px;
+        .service img {
+            width: 100%;
             height: auto;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease;
+            border-radius: 10px;
         }
 
-        .partner-logo img:hover {
-            transform: scale(1.1);
+        .service h3 {
+            margin: 15px 0;
+            color: #007BFF;
+        }
+
+        .service p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .learn-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: white;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .learn-more:hover {
+            background-color: #0056b3;
         }
 
         footer {
-            background-color: #0056b3;
+            background-color: #12172a;
             color: white;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-media {
+            margin-bottom: 10px;
+        }
+
+        .social-icon {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer-link {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin-top: 10px;
         }
 
         html {
@@ -197,20 +220,39 @@
             font-size: 24px;
         }
 
+        /* Responsive styles */
+        @media (min-width: 768px) {
+            nav ul {
+                flex-direction: row;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 15px;
+            }
+
+            .service {
+                flex: 1 1 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        عقارات
+        <i class="fas fa-building"></i>
     </header>
 
     <nav>
         <ul>
+            <li><a href="index.html"> المفضلة</a></li>
             <li><a href="contact.html">اتصل بنا</a></li>
             <li><a href="villas.html">الفلل</a></li>
             <li><a href="apartments.html">الشقق</a></li>
+            <li><a href="about.html">اخر الاخبار </a></li>
             <li><a href="about.html">عن الشركة</a></li>
-            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <li><a href="about.html">مشاريعنا</a></li>
+            <li><a href="index.html"> الرئيسية</a></li>
         </ul>
     </nav>
 
@@ -225,60 +267,77 @@
 
         <div class="section">
             <h2>رؤيتنا</h2>
+            <img src="vision_image.jpg" alt="رؤيتنا" style="width: 100%; height: auto; margin-bottom: 15px; border-radius: 10px;">
             <p>نسعى لنكون الشركة الرائدة في مجال العقارات على مستوى المنطقة، مع التركيز على تقديم الحلول المتكاملة والمبتكرة لعملائنا.</p>
+            <a href="vision.html" class="learn-more">اعرف اكثر</a>
         </div>
 
         <div class="section">
-            <h2>فريقنا</h2>
-            <div class="team">
-                <div class="team-member">
-                    <img src="team1.jpg" alt="فريق 1">
-                    <h3>أحمد خالد</h3>
-                    <p>المدير التنفيذي</p>
+            <h2>خدماتنا</h2>
+            <div class="services">
+                <div class="service">
+                    <img src="service1.jpg" alt="خدمة 1">
+                    <h3>خدمة التصميم الداخلي</h3>
+                    <p>نقدم خدمات تصميم داخلي مبتكرة تتناسب مع جميع احتياجات عملائنا.</p>
+                    <a href="services.html" class="learn-more">اعرف اكثر</a>
                 </div>
-                <div class="team-member">
-                    <img src="team2.jpg" alt="فريق 2">
-                    <h3>ليلى يوسف</h3>
-                    <p>مديرة التسويق</p>
+                <div class="service">
+                    <img src="service2.jpg" alt="خدمة 2">
+                    <h3>إدارة المشاريع</h3>
+                    <p>إدارة كاملة للمشاريع من البداية إلى النهاية لضمان نجاحها.</p>
+                    <a href="services.html" class="learn-more">اعرف اكثر</a>
                 </div>
-                <div class="team-member">
-                    <img src="team3.jpg" alt="فريق 3">
-                    <h3>محمد علي</h3>
-                    <p>مدير العمليات</p>
+                <div class="service">
+                    <img src="service3.jpg" alt="خدمة 3">
+                    <h3>استشارات عقارية</h3>
+                    <p>تقديم استشارات عقارية مهنية لمساعدتك في اتخاذ القرارات الصحيحة.</p>
+                    <a href="services.html" class="learn-more">اعرف اكثر</a>
                 </div>
             </div>
         </div>
 
         <div class="section">
             <h2>شركاؤنا</h2>
-            <div class="partners">
-                <div class="partner-logo">
+            <div class="services">
+                <div class="service">
                     <img src="partner1.png" alt="شريك 1">
-                    <p>شركة البناء العالمية</p>
+                    <h3>شركة البناء العالمية</h3>
                 </div>
-                <div class="partner-logo">
+                <div class="service">
                     <img src="partner2.png" alt="شريك 2">
-                    <p>المقاولون العرب</p>
+                    <h3>المقاولون العرب</h3>
                 </div>
-                <div class="partner-logo">
+                <div class="service">
                     <img src="partner3.png" alt="شريك 3">
-                    <p>شركة التصميم المبدع</p>
+                    <h3>شركة التصميم المبدع</h3>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2024</p>
-        <p>للتواصل: contact@realestate.com | هاتف: 0123456789</p> 
+        <div class="footer-container">
+            <p>&copy; 2024 شركتك. جميع الحقوق محفوظة.</p>
+            <hr>
+            <div class="footer-links">
+                <a href="contact.html" class="footer-link">اتصل بنا</a>
+                <a href="disclaimer.html" class="footer-link">إخلاء مسؤولية</a>
+                <a href="terms.html" class="footer-link">الشروط والأحكام</a>
+            </div>
+            <hr>
+        </div>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://whatsapp.com" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
     </footer>
 
-    <!-- Scroll to top button -->
     <div class="scroll-to-top" onclick="scrollToTop()">
         <i class="fas fa-chevron-up"></i>
     </div>
+
     <script>
-        // Scroll to top functionality
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
@@ -293,9 +352,7 @@
             } else {
                 scrollToTopBtn.style.display = 'none';
             }
-    });
-
-
+        });
     </script>
 </body>
 </html>

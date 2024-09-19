@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تواصل معنا</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* جميع التنسيقات الموجودة كما هي */
-        body {
+     body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -16,15 +16,12 @@
         }
 
         header {
-            background-color: #007BFF;
+            background-color: #112031;
             color: white;
-            padding: 15px 0;
+            padding: 20px;
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
 
         nav ul {
@@ -34,10 +31,11 @@
             display: flex;
             justify-content: center;
             background-color: #0056b3;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         nav ul li a {
@@ -52,7 +50,6 @@
             background-color: #003d7a;
             border-radius: 5px;
             transform: scale(1.1);
-
         }
 
         .content {
@@ -60,12 +57,17 @@
             max-width: 1200px;
             margin: 0 auto;
             animation: fadeIn 1s ease;
+        }
 
-        }
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
+
         h1 {
             text-align: center;
             color: #007BFF;
@@ -74,10 +76,16 @@
 
         .contact-info {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 20px;
-            justify-content: space-between;
             margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .contact-info {
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
 
         .contact-info .info,
@@ -180,10 +188,44 @@
         }
 
         footer {
-            background-color: #0056b3;
+            background-color: #12172a;
             color: white;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-media {
+            margin-bottom: 10px;
+        }
+
+        .social-icon {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer-link {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin-top: 10px;
         }
 
         .scroll-to-top {
@@ -242,11 +284,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 1000;
         }
+
     </style>
 </head>
+
 <body>
     <header>
-        عقارات
+        <i class="fas fa-building"></i>
     </header>
 
     <nav>
@@ -255,8 +299,10 @@
             <li><a href="contact.html">اتصل بنا</a></li>
             <li><a href="villas.html">الفلل</a></li>
             <li><a href="apartments.html">الشقق</a></li>
+            <li><a href="about.html">اخر الاخبار </a></li>
             <li><a href="about.html">عن الشركة</a></li>
-            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <li><a href="about.html">مشاريعنا</a></li>
+            <li><a href="index.html"> الرئيسية</a></li>
         </ul>
     </nav>
 
@@ -270,44 +316,81 @@
                 <p>البريد الإلكتروني: contact@realestate.com</p>
                 <p>ساعات العمل: من الأحد إلى الخميس، 9 صباحاً - 6 مساءً</p>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/yourpage" target="_blank" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/yourpage" target="_blank" title="إنستغرام"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/0123456789" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/yourpage" target="_blank" title="فيسبوك"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank" title="إنستغرام"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/0123456789" target="_blank" title="واتساب"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="" target="_blank" title="الهاتف"><i class="fas fa-phone"></i></i></a>
                 </div>
             </div>
 
             <div class="map">
                 <h2>الموقع</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3088.510142724769!2d-77.03687068458288!3d38.90719297957081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b768013ebff1%3A0x22a851d20a19c6b!2s1600%20Pennsylvania%20Ave%20NW%2C%20Washington%2C%20DC%2020500!5e0!3m2!1sen!2sus!4v1615895871230!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe> </div> </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3088.510142724769!2d-77.03687068458288!3d38.90719297957081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b768013ebff1%3A0x22a851d20a19c6b!2s1600%20Pennsylvania%20Ave%20NW%2C%20Washington%2C%20DC%2020500!5e0!3m2!1sen!2sus!4v1615895871230!5m2!1sen!2sus"
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
         <div class="contact-form">
             <h2>اترك لنا رسالة</h2>
             <form id="contactForm">
                 <label for="name">الاسم:</label>
-                <input type="text" id="name" name="name" pattern="[أ-يa-zA-Z\s]+" title="الاسم يجب أن يحتوي على أحرف عربية أو إنجليزية فقط." required>
-        
+                <input type="text" id="name" name="name" pattern="[أ-يa-zA-Z\s]+"
+                    title="الاسم يجب أن يحتوي على أحرف عربية أو إنجليزية فقط." required>
+
                 <label for="phone">رقم الهاتف:</label>
-                <input type="tel" id="phone" name="phone" pattern="05\d{8}" title="رقم الهاتف يجب أن يبدأ بـ 05 ويتكون من 10 أرقام." required>
-        
+                <input type="tel" id="phone" name="phone" pattern="05\d{8}"
+                    title="رقم الهاتف يجب أن يبدأ بـ 05 ويتكون من 10 أرقام." required>
+
                 <label for="message">الرسالة:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
-        
+
                 <button type="submit">إرسال</button>
             </form>
         </div>
     </div>
-    
+    <header>
+        <i class="fas fa-building"></i>
+    </header>
+
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2024</p>
-        <p>للتواصل: contact@realestate.com | هاتف: 0123456789</p>     </footer>
-    
+        <div class="footer-container">
+
+            <p>&copy; 2024 شركتك. جميع الحقوق محفوظة.</p>
+            <hr>
+            <div class="footer-links">
+                <a href="contact.html" class="footer-link">اتصل بنا</a>
+                <a href="disclaimer.html" class="footer-link">إخلاء مسؤولية</a>
+                <a href="terms.html" class="footer-link">الشروط والأحكام</a>
+            </div>
+
+            <hr>
+        </div>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://whatsapp.com" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+
+        </div>
+
+    </footer>
+
+
     <div class="scroll-to-top" onclick="scrollToTop()">
         <i class="fas fa-chevron-up"></i>
     </div>
-    
+
+
+    <div class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
     <div class="message" id="message">تم الإرسال بنجاح</div>
-    
+
     <script>
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const scrollToTopBtn = document.querySelector('.scroll-to-top');
             if (window.scrollY > 300) {
                 scrollToTopBtn.style.display = 'block';
@@ -323,28 +406,27 @@
             });
         }
 
-        document.addEventListener('DOMContentLoaded', function() {  
+        document.addEventListener('DOMContentLoaded', function () {
             var form = document.querySelector('.contact-form form');
             var button = form.querySelector('button');
-            button.addEventListener('click', function(event) {
+            button.addEventListener('click', function (event) {
                 event.preventDefault();
 
-                // Display confirmation message
                 var confirmationBox = document.createElement('div');
                 confirmationBox.textContent = 'تم الإرسال بنجاح، شكراً لإرسال الرسالة';
                 confirmationBox.classList.add('confirmation-box');
                 document.body.appendChild(confirmationBox);
 
-                // Hide confirmation message after 3 seconds and reset form
-                setTimeout(function() {
+                setTimeout(function () {
                     confirmationBox.style.opacity = '0';
-                    setTimeout(function() {
+                    setTimeout(function () {
                         confirmationBox.remove();
-                        form.reset(); // Clear form fields
+                        form.reset();
                     }, 500);
                 }, 3000);
             });
         });
     </script>
 </body>
+
 </html>
