@@ -337,12 +337,12 @@
             <h2>اترك لنا رسالة</h2>
             <form id="contactForm">
                 <label for="name">الاسم:</label>
-                <input type="text" id="name" name="name" pattern="[أ-يa-zA-Z\s]+"
+                <input type="text" id="name" name="name" pattern="[أ-يa-zA-Z\s]+" 
                     title="الاسم يجب أن يحتوي على أحرف عربية أو إنجليزية فقط." required>
 
                 <label for="phone">رقم الهاتف:</label>
-                <input type="tel" id="phone" name="phone" pattern="05\d{8}"
-                    title="رقم الهاتف يجب أن يبدأ بـ 05 ويتكون من 10 أرقام." required>
+                <input type="tel" id="phone" maxlength="10" name="phone" pattern="\d{10}" 
+                    title="رقم الهاتف يجب أن يتكون من 10 أرقام فقط." required>
 
                 <label for="message">الرسالة:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
@@ -390,7 +390,7 @@
     <div class="message" id="message">تم الإرسال بنجاح</div>
 
     <script>
-        window.addEventListener('scroll', function () {
+                        window.addEventListener('scroll', function () {
             const scrollToTopBtn = document.querySelector('.scroll-to-top');
             if (window.scrollY > 300) {
                 scrollToTopBtn.style.display = 'block';
@@ -407,10 +407,30 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            var form = document.querySelector('.contact-form form');
-            var button = form.querySelector('button');
-            button.addEventListener('click', function (event) {
+            var form = document.querySelector('#contactForm');
+            form.addEventListener('submit', function (event) {
                 event.preventDefault();
+
+                var name = document.querySelector('#name').value;
+                var phone = document.querySelector('#phone').value;
+                var message = document.querySelector('#message').value;
+
+                var namePattern = /^[أ-يa-zA-Z\s]+$/;
+                if (!namePattern.test(name)) {
+                    alert('الاسم يجب أن يحتوي على أحرف عربية أو إنجليزية فقط.');
+                    return;
+                }
+
+                var phonePattern = /^\d{10}$/;
+                if (!phonePattern.test(phone)) {
+                    alert('رقم الهاتف يجب أن يتكون من 10 أرقام فقط.');
+                    return;
+                }
+
+                if (!message.trim()) {
+                    alert('يرجى إدخال رسالة.');
+                    return;
+                }
 
                 var confirmationBox = document.createElement('div');
                 confirmationBox.textContent = 'تم الإرسال بنجاح، شكراً لإرسال الرسالة';
@@ -426,6 +446,7 @@
                 }, 3000);
             });
         });
+    </script>
     </script>
 </body>
 
