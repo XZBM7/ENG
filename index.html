@@ -692,21 +692,21 @@
     color: rgb(11, 46, 204); 
 }
 .centered-title {
-    position: fixed; /* Fixes the position of the element */
-    top: 0; /* Aligns it to the top of the viewport */
-    left: 50%; /* Centers horizontally */
-    transform: translateX(-50%); /* Centers the element by shifting it back by 50% of its width */
-    text-align: center; /* Centers the text inside */
-    width: 100%; /* Ensures the container takes the full width */
-    background-color: white; /* Optional: Adds a background color */
-    z-index: 1000; /* Ensures it appears above other content */
-    padding: 10px; /* Adds some padding around the text */
+    position: fixed; 
+    top: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    text-align: center;
+    width: 100%; 
+    background-color: white; 
+    z-index: 1000; 
+    padding: 10px;
 }
 
-.latest-properties-title {
-    color: blue; /* Adjust this color to your preferred shade */
-    margin: 20px 0 0 0; /* Add space above the title */
-    font-size: 30px; /* Adjust the font size as needed */
+#latest-properties-title {
+    color: 007BFF; 
+    margin: 20px 0 0 0; 
+    font-size: 30px; 
 }
 
 
@@ -728,7 +728,7 @@
             <li><a href="about.html">اخر الاخبار </a></li>
             <li><a href="about.html">عن الشركة</a></li>
             <li><a href="#projects">مشاريعنا</a></li>
-            <li><a href="#latest-properties">أحدث العقارات</a></li>
+            <li><a href="#latest-properties-title">أحدث العقارات</a></li>
             <li><a href="index.html"> الرئيسية</a></li>
         </ul>
     </nav>
@@ -752,7 +752,7 @@
                     <p>الشقق</p>
                 </a>
             </div>
-                <h2 class="latest-properties-title">أحدث العقارات</h2>
+                <h2 id="latest-properties-title">أحدث العقارات</h2>
             </div>
             
         <div class="latest-properties-grid">
