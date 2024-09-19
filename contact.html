@@ -7,7 +7,7 @@
     <title>تواصل معنا</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-     body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -63,6 +63,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -284,7 +285,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 1000;
         }
-
     </style>
 </head>
 
@@ -337,12 +337,12 @@
             <h2>اترك لنا رسالة</h2>
             <form id="contactForm">
                 <label for="name">الاسم:</label>
-                <input type="text" id="name" name="name" pattern="[أ-يa-zA-Z\s]+" 
+                <input type="text" id="name" name="name" pattern="[أ-يa-zA-Z\s]+"
                     title="الاسم يجب أن يحتوي على أحرف عربية أو إنجليزية فقط." required>
 
                 <label for="phone">رقم الهاتف:</label>
-                <input type="tel" id="phone" maxlength="10" name="phone" pattern="\d{10}" 
-                    title="رقم الهاتف يجب أن يتكون من 10 أرقام فقط." required>
+                <input type="tel" id="phone" maxlength="10" name="phone" pattern="05\d{8}"
+                    title="رقم الهاتف يجب أن يبدأ بـ 05 ويتكون من 10 أرقام فقط." required>
 
                 <label for="message">الرسالة:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
@@ -390,7 +390,7 @@
     <div class="message" id="message">تم الإرسال بنجاح</div>
 
     <script>
-                        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function () {
             const scrollToTopBtn = document.querySelector('.scroll-to-top');
             if (window.scrollY > 300) {
                 scrollToTopBtn.style.display = 'block';
@@ -421,9 +421,9 @@
                     return;
                 }
 
-                var phonePattern = /^\d{10}$/;
+                var phonePattern = /^05\d{8}$/;
                 if (!phonePattern.test(phone)) {
-                    alert('رقم الهاتف يجب أن يتكون من 10 أرقام فقط.');
+                    alert('رقم الهاتف يجب أن يبدأ بـ 05 ويتكون من 10 أرقام فقط.');
                     return;
                 }
 
