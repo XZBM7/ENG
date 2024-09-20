@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الشقة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <style>
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+        }
+
+        header {
+            background-color: #112031;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #003d7a;
+            border-radius: 5px;
+            transform: scale(1.1);
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease;
+        }
+
+        .property-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .property-images {
+            flex: 1;
+        }
+
+        .property-images img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .property-info {
+            text-align: left;
+        }
+
+        .property-info h1 {
+            font-size: 28px;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        .property-info p {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .price  {
+            font-size: 22px;
+            color: #29a846;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .details p {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .details .icon {
+            font-size: 24px;
+            color: #007BFF;
+        }
+
+        .contact-section {
+            margin-top: 20px;
+        }
+
+        .contact-section h3 {
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .contact-buttons a {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-buttons a:hover {
+            background-color: #0056b3;
+        }
+
+        .location-map {
+            margin-top: 20px;
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #12172a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-media {
+            margin-bottom: 10px;
+        }
+
+        .social-icon {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .footer-links {
+            margin-bottom: 10px;
+        }
+
+        .footer-link {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin-top: 10px;
+        }
+        /* Image modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+            text-align: center;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            margin: auto;
+            display: block;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .nav-buttons button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Responsive styles */
+        @media (min-width: 768px) {
+            .property-details {
+                flex-direction: row;
+            }
+
+            .property-images {
+                flex: 1;
+            }
+
+            .property-info {
+                flex: 1;
+            }
+        }
+        .slider {
+    position: relative;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* خلفية أكثر وضوحًا */
+    color: white;
+    border: none;
+    padding: 15px; /* زيادة حجم الزر */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10; /* التأكد من أن الأسهم فوق الصور */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* إضافة ظل لجعل الزر أكثر بروزًا */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* خلفية داكنة عند التمرير */
+    transform: scale(1.1); /* تكبير الزر عند التمرير */
+}
+
+.prev {
+    left: 20px; /* موضع من اليسار */
+}
+
+.next {
+    right: 20px; /* موضع من اليمين */
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px; /* حجم الأسهم */
+    color: white; /* لون الأسهم */
+    cursor: pointer;
+    user-select: none; /* منع تحديد النص */
+    z-index: 10; /* جعل الأسهم فوق الصورة */
+}
+
+.left {
+    left: 10px; /* موقع السهم الأيسر */
+}
+
+.right {
+    right: 10px; /* موقع السهم الأيمن */
+}
+.modal-content {
+    display: block;
+    max-width: 90%;  /* أقصى عرض للصورة */
+    max-height: 90%; /* أقصى ارتفاع للصورة */
+    margin: auto;    /* مركز الصورة أفقياً */
+    transition: transform 0.3s ease; /* تأثير التحول عند التكبير */
+}
+
+.modal {
+    display: none; /* إخفاء النافذة بشكل افتراضي */
+    position: fixed; /* وضع ثابت */
+    z-index: 1000; /* تأكد من ظهور النافذة فوق العناصر الأخرى */
+    left: 0;
+    top: 0;
+    width: 100%; /* عرض كامل */
+    height: 100%; /* ارتفاع كامل */
+    overflow: auto; /* تمكين التمرير إذا لزم الأمر */
+    background-color: rgba(0,0,0,0.8); /* خلفية داكنة مع شفافية */
+}
+
+/* إذا كنت تريد إضافة تأثير تكبير عند اللمس */
+.modal-content:active {
+    transform: scale(1.1); /* تكبير بنسبة 10% عند الضغط */
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <i class="fas fa-building"></i>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="villas.html">الفلل</a></li>
+            <li><a href="apartments.html">الشقق</a></li>
+            <li><a href="news.html">اخر الاخبار</a></li>
+            <li><a href="about.html">عن الشركة</a></li>
+            <li><a href="projects.html">مشاريعنا</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+        </ul>
+    </nav>
+
+    <div class="content" id="property-details">
+        <!-- تفاصيل الشقة ستظهر هنا -->
+    </div>
+
+    <div class="location-map">
+        <h3 style="color: brown; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 26px;">موقع الشقة :</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.377632911551!2d-122.41941568468162!3d37.77492977975997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808b5b6a5e93%3A0x5aef51e21fc4a2aa!2sSan%20Francisco%2C%20California%2C%20USA!5e0!3m2!1sen!2sin!4v1633999937125!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 شركتك. جميع الحقوق محفوظة.</p>
+            <hr>
+            <div class="footer-links">
+                <a href="contact.html" class="footer-link">اتصل بنا</a>
+                <a href="disclaimer.html" class="footer-link">إخلاء مسؤولية</a>
+                <a href="terms.html" class="footer-link">الشروط والأحكام</a>
+            </div>
+            <hr>
+        </div>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://whatsapp.com" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+
+    <div>
+        <img src="https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn" alt="Description 1">
+        <img src="https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn" alt="Description 2">
+        <!-- Add more images as needed -->
+    </div>
+    <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
+    <div class="arrow right" onclick="changeSlide(1)">&#10095;</div>
+
+    
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+        <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
+        <div class="arrow right" onclick="changeSlide(1)">&#10095;</div>
+    </div>
+
+    <script>
+        
+        let slideIndex = 0;
+
+function showSlides() {
+    const slides = document.querySelectorAll('.slides img');
+    slides.forEach((slide, index) => {
+        slide.style.display = index === slideIndex ? 'block' : 'none';
+    });
+}
+
+// Change slide function
+function changeSlide(n) {
+    const slides = document.querySelectorAll('.slides img');
+    slideIndex += n;
+    
+    if (slideIndex >= slides.length) {
+        slideIndex = 0; // Loop to the first image
+    } else if (slideIndex < 0) {
+        slideIndex = slides.length - 1; // Loop to the last image
+    }
+    showSlides();
+    if (modal.style.display === "flex") {
+        updateModalImage(slides);
+    }
+}
+
+// Update modal image function
+function updateModalImage(slides) {
+    const modalImg = document.getElementById('modalImage');
+    modalImg.src = slides[slideIndex].src;
+    const captionText = document.getElementById('caption');
+    captionText.innerHTML = slides[slideIndex].alt;
+}
+
+// Add click event to images
+const images = document.querySelectorAll('.slides img');
+images.forEach(image => {
+    image.onclick = function () {
+        const modal = document.getElementById('imageModal');
+        modal.style.display = "flex";
+        updateModalImage(images);
+        const modalImg = document.getElementById('modalImage');
+        modalImg.style.marginTop = (window.innerHeight - modalImg.offsetHeight) / 2 + "px";
+    }
+});
+
+// Touch event support for swiping
+let touchStartX = 0;
+
+images.forEach(image => {
+    image.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+    });
+
+    image.addEventListener('touchend', (event) => {
+        const touchEndX = event.changedTouches[0].clientX;
+        if (touchStartX > touchEndX + 50) {
+            changeSlide(1); // Swipe left
+        } else if (touchStartX < touchEndX - 50) {
+            changeSlide(-1); // Swipe right
+        }
+    });
+});
+
+// Initial display: only the first image should be shown
+showSlides();
+
+const content = [
+    {
+     
+       images: ["https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn"],
+       images: ["https://imgs.search.brave.com/vrS-HHDZwbqXdwO6wHXYB0nYenDJ6Kpv379Ay7lJAyw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxtcnNhbC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvTW9kZWxzLUZh/Y2FkZXMtVmlsbGFz/LmpwZw"],
+        title: "شقة فاخرة في المدينة",
+        price: "300,000 ر.س",
+        area: "150 م²",
+        bedrooms: 3,
+        bathrooms: 2,
+        livingRooms: 1,
+        location: "الرياض",
+        id: 1
+    },
+    {
+        images: ["apartment2.jpg"],
+        title: "شقة مريحة مع إطلالة",
+        price: "250,000 ر.س",
+        area: "120 م²",
+        bedrooms: 2,
+        bathrooms: 1,
+        livingRooms: 1,
+        location: "جدة",
+        id: 2
+    },
+    {
+        images: ["apartment3.jpg"],
+        title: "شقة حديثة قريبة من المرافق",
+        price: "280,000 ر.س",
+        area: "130 م²",
+        bedrooms: 2,
+        bathrooms: 2,
+        livingRooms: 1,
+        location: "الدمام",
+        id: 3
+    }
+];
+
+// Load property details on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const propertyId = urlParams.get('id');
+    const property = content.find(p => p.id == propertyId);
+
+    if (property) {
+        const propertyDetails = document.getElementById('property-details');
+        const images = property.images || []; // Use the images array
+
+        propertyDetails.innerHTML = `
+        <div class="property-details">
+            <div class="property-images">
+                <div class="slider">
+                    <div class="slides">
+                        ${images.map(img => `<img src="${img}" alt="${property.title}">`).join('')}
+                    </div>
+                    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+            </div>
+            <div class="property-info">
+                <h1>${property.title}</h1>
+                <p class="price">${property.price}</p>
+                <div class="details">
+                    <p><span class="icon"><i class="fas fa-home"></i></span> ${property.area}</p>
+                    <p><span class="icon"><i class="fas fa-bed"></i></span> ${property.bedrooms} غرف نوم</p>
+                    <p><span class="icon"><i class="fas fa-bath"></i></span> ${property.bathrooms} حمام</p>
+                    <p><span class="icon"><i class="fas fa-couch"></i></span> ${property.livingRooms} غرفة معيشة</p>
+                </div>
+                <div class="contact-section">
+                    <h3>للاستفسار:</h3>
+                    <div class="contact-buttons">
+                        <a href="tel:+1234567890"><i class="fas fa-phone"></i> اتصل بنا</a>
+                        <a href="https://wa.me/1234567890"><i class="fab fa-whatsapp"></i> واتس آب</a>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+    } else {
+        document.getElementById('property-details').innerHTML = '<p>لم يتم العثور على تفاصيل الشقة.</p>';
+    }
+});
+
+
+    </script>
+</body>
+
+</html>

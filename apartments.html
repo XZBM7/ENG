@@ -358,35 +358,36 @@
         ];
 
         document.addEventListener('DOMContentLoaded', () => {
-            const latestProperties = document.getElementById('latest-properties');
-            content.forEach(property => {
-                const propertyElement = document.createElement('div');
-                propertyElement.classList.add('property');
-                propertyElement.innerHTML = `
-                    <a href="#">
-                        <img src="${property.image}" alt="${property.title}">
-                        <div class="property-info">
-                            <h2>${property.title}</h2>
-                            <p class="price">${property.price}</p>
-                            <hr>
-                            <div class="details">
-                                <p><i class="fas fa-expand-arrows-alt icon"></i> المساحة: ${property.area}</p>
-                                <p><i class="fas fa-bed icon"></i> غرف النوم: ${property.bedrooms}</p>
-                                <p><i class="fas fa-bath icon"></i> الحمامات: ${property.bathrooms}</p>
-                                <p><i class="fas fa-couch icon"></i> غرف المعيشة: ${property.livingRooms}</p>
-                                <p><i class="fas fa-map-marker-alt icon"></i> الموقع: ${property.location}</p>
-                            </div>
-                            <div class="contact-buttons">
-                                <a href="tel:1234567890" class="phone" title="اتصل بنا"><i class="fas fa-phone-alt"></i></a>
-                                <a href="https://wa.me/1234567890" class="whatsapp" title="تواصل عبر واتساب"><i class="fab fa-whatsapp"></i></a>
-                                <a href="#" class="favorite" title="إضافة إلى المفضلة" data-id="${property.id}"><i class="fas fa-thumbs-up"></i></a>
-                                <span id="like-count-${property.id}">0</span>
-                            </div>
+        const latestProperties = document.getElementById('latest-properties');
+        content.forEach(property => {
+            const propertyElement = document.createElement('div');
+            propertyElement.classList.add('property');
+            propertyElement.innerHTML = `
+                <a href="property-details-apart.html?id=${property.id}">
+                    <img src="${property.image}" alt="${property.title}">
+                    <div class="property-info">
+                        <h2>${property.title}</h2>
+                        <p class="price">${property.price}</p>
+                        <hr>
+                        <div class="details">
+                            <p><i class="fas fa-expand-arrows-alt icon"></i> المساحة: ${property.area}</p>
+                            <p><i class="fas fa-bed icon"></i> غرف النوم: ${property.bedrooms}</p>
+                            <p><i class="fas fa-bath icon"></i> الحمامات: ${property.bathrooms}</p>
+                            <p><i class="fas fa-couch icon"></i> غرف المعيشة: ${property.livingRooms}</p>
+                            <p><i class="fas fa-map-marker-alt icon"></i> الموقع: ${property.location}</p>
                         </div>
-                    </a>
-                `;
-                latestProperties.appendChild(propertyElement);
-            });
+                        <div class="contact-buttons">
+                            <a href="tel:1234567890" class="phone" title="اتصل بنا"><i class="fas fa-phone-alt"></i></a>
+                            <a href="https://wa.me/1234567890" class="whatsapp" title="تواصل عبر واتساب"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="favorite" title="إضافة إلى المفضلة" data-id="${property.id}"><i class="fas fa-thumbs-up"></i></a>
+                            <span id="like-count-${property.id}">0</span>
+                        </div>
+                    </div>
+                </a>
+            `;
+            latestProperties.appendChild(propertyElement);
+        });
+    });
 
             function updateLikeButton(button, countSpan, id) {
                 let likeCount = parseInt(localStorage.getItem(`likeCount-${id}`) || '0', 10);
@@ -422,7 +423,6 @@
                     updateLikeButton(button, countSpan, id);
                 }
             });
-        });
 
         function scrollToTop() {
             window.scrollTo({
