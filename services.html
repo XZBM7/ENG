@@ -64,18 +64,45 @@
         }
 
         .section {
+            
             background-color: white;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        .section div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+
+        }
+        .section div p {
+            font-size: 25px;
+            justify-content: center;
+        }
 
         .section img {
-            width: 100%;
-            height: auto;
+            width: 425px;
+            height: 300px;
             border-radius: 10px;
             margin-bottom: 15px;
+        }
+
+        @media (max-width: 770px) {
+            .section div{
+                display: block;
+            }
+            .section img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                margin-bottom: 15px;
+            }
+            .section div p {
+            font-size: 15px;
+        }
         }
 
         footer {
@@ -132,21 +159,28 @@
         <h1>خدماتنا</h1>
         <div class="section">
             <h2>خدمة التصميم الداخلي</h2>
-            <img src="interior_design.jpg" alt="تصميم داخلي">
-            <p>نقدم خدمات تصميم داخلي تشمل التخطيط والتصميم والإشراف على التنفيذ. نحن نحرص على تحويل رؤيتك إلى واقع من
-                خلال تقديم تصاميم مبتكرة تتناسب مع ذوقك واحتياجاتك.</p>
+            <div>
+                <img src="https://imgs.search.brave.com/RiIc7Hi3nNmz2ZenfdS4W_nf1FiBUEBo4nOQPU9QwoE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9kZWNv/cmlvdXMuY29tL3B1/YmxpYy9ibG9ncy9N/YXkyMDIzLzMtaW50/ZXJpb3ItZGVzaWdu/LmpwZw" alt="تصميم داخلي">
+                <p>نقدم خدمات تصميم داخلي تشمل التخطيط والتصميم والإشراف على التنفيذ. نحن نحرص على تحويل رؤيتك إلى واقع من
+                    خلال تقديم تصاميم مبتكرة تتناسب مع ذوقك واحتياجاتك.</p>
+            </div>
         </div>
         <div class="section">
             <h2>إدارة المشاريع</h2>
-            <img src="project_management.jpg" alt="إدارة مشاريع">
-            <p>نقوم بإدارة مشاريع البناء والتطوير من البداية حتى النهاية. نضمن تحقيق أهداف المشروع ضمن الميزانية المحددة
-                وفي الوقت المحدد من خلال فريق محترف ومؤهل.</p>
+            <div>
+                <img src="https://imgs.search.brave.com/OMSwAsj1AZzOEFht9CRMFzh9pp277z0rE1DWVn-c9c4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9rdW4u/YWNhZGVteS9ibG9n/cy93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8xMi8lRDglQTUl/RDglQUYlRDglQTcl/RDglQjElRDglQTkt/JUQ4JUE3JUQ5JTg0/JUQ5JTg1JUQ4JUI0/JUQ4JUE3JUQ4JUIx/JUQ5JThBJUQ4JUI5/LTEwMjR4NzI2Lmpw/Zw" alt="إدارة مشاريع">
+                <p>نقوم بإدارة مشاريع البناء والتطوير من البداية حتى النهاية. نضمن تحقيق أهداف المشروع ضمن الميزانية المحددة
+                    وفي الوقت المحدد من خلال فريق محترف ومؤهل.</p>
+            </div>
         </div>
         <div class="section">
             <h2>استشارات عقارية</h2>
-            <img src="real_estate_consulting.jpg" alt="استشارات عقارية">
-            <p>نقدم استشارات عقارية شاملة تساعدك في اتخاذ قرارات مدروسة بشأن استثمارك في العقارات. نقدم لك المعلومات
-                والنصائح التي تحتاجها لتحقيق أهدافك العقارية.</p>
+            <div>
+                <img src="https://imgs.search.brave.com/kOrFlVXrOmpBA4RDEZDDNNtdiw0F_saVKuGev0yYo9c/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tYWhh/bGxncm91cC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjIv/MDIvJUQ4JUE3JUQ4/JUIzJUQ4JUFBJUQ4/JUI0JUQ4JUE3JUQ4/JUIxJUQ4JUE3JUQ4/JUFBLSVEOCVCOSVE/OSU4MiVEOCVBNyVE/OCVCMSVEOSU4QSVE/OCVBOS0lRDklODUl/RDglQUMlRDglQTcl/RDklODYlRDklOEEl/RDglQTktJUQ4JUFB/JUQ5JTgyJUQ4JUFG/JUQ5JTg1JUQ5JTg3/JUQ4JUE3LSVEOCVC/NCVEOCVCMSVEOSU4/MyVEOCVBOS0lRDkl/ODUlRDglQjMlRDkl/ODMlRDklODYtJUQ4/JUE3JUQ5JTg0JUQ4/JUI5JUQ5JTgyJUQ4/JUE3JUQ4JUIxJUQ5/JThBJUQ4JUE5LTEu/anBn
+                " alt="استشارات عقارية">
+                <p>نقدم استشارات عقارية شاملة تساعدك في اتخاذ قرارات مدروسة بشأن استثمارك في العقارات. نقدم لك المعلومات
+                    والنصائح التي تحتاجها لتحقيق أهدافك العقارية.</p>
+            </div>
         </div>
     </div>
 
