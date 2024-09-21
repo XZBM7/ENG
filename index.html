@@ -641,54 +641,12 @@
         }
 
         .project-carousel {
-            position: relative;
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        .project-item {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .project-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .more-btn {
-            margin-top: 20px;
-        }
-
-        .more-btn .btn {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .more-btn .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .project-carousel {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px 0;
             overflow: hidden;
-        }
-
-        .swiper-wrapper {
-            display: flex;
-            align-items: center;
+            box-sizing: border-box;
         }
 
         .project-item {
@@ -701,31 +659,40 @@
             box-sizing: border-box;
             padding: 20px;
             background-color: #f9f9f9;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
-        .project-item:hover {
-            transform: scale(1.05);
+        @media (max-width: 1024px) {
+            .project-item {
+                flex: 0 0 calc(33.33% - 40px);
+            }
         }
 
-        .project-item a {
-            text-decoration: none;
+        @media (max-width: 768px) {
+            .project-item {
+                flex: 0 0 calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-item {
+                flex: 0 0 calc(100% - 40px);
+            }
         }
 
         .project-item img {
-            max-width: 110%;
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
             margin-bottom: 15px;
             transition: opacity 0.3s ease;
         }
 
-        .project-item:hover img {
-            opacity: 0.9;
+        .project-item:hover {
+            transform: scale(1.05);
         }
-
 
         .project-item h3 {
             font-size: 1.5rem;
@@ -738,43 +705,11 @@
             color: #666;
         }
 
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: #000000;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-        }
-
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-        }
-
-        .swiper-scrollbar {
-            background-color: #f1f1f1;
-            height: 5px;
-            border-radius: 5px;
-        }
 
         .more-btn {
             text-align: center;
             margin-top: 20px;
         }
-
-        .projects-section {
-            padding: 40px 20px;
-        }
-
-        #section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: #007BFF;
-            margin-bottom: 30px;
-        }
-
 
         .more-btn .btn {
             display: inline-block;
@@ -790,10 +725,13 @@
             background-color: #0056b3;
         }
 
-        .latest-projects {
-            font-size: 20px;
+        #section-title {
+            text-align: center;
+            font-size: 2rem;
             color: #007BFF;
+            margin-bottom: 30px;
         }
+
 
         .favorite.liked i {
             color: rgb(11, 46, 204);
@@ -816,6 +754,9 @@
             margin: 20px 0 0 0;
             font-size: 30px;
         }
+        .swiper-button-next, .swiper-button-prev {
+    display: none;
+}
     </style>
 </head>
 
@@ -851,13 +792,13 @@
                 <a href="villas.html">
                     <img src="https://imgs.search.brave.com/vrS-HHDZwbqXdwO6wHXYB0nYenDJ6Kpv379Ay7lJAyw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxtcnNhbC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvTW9kZWxzLUZh/Y2FkZXMtVmlsbGFz/LmpwZw"
                         alt="Property 1">
-                        <p style="font-size: 25px; color: #007BFF;">الفلل</p>
+                    <p style="font-size: 25px; color: #007BFF;">الفلل</p>
                 </a>
                 <a href="apartments.html">
                     <img src="https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn"
                         alt="Property 2">
-                        <p style="font-size: 25px; color: #007BFF;">الشقق</p>
-                    </a>
+                    <p style="font-size: 25px; color: #007BFF;">الشقق</p>
+                </a>
             </div>
             <h2 id="latest-properties-title">أحدث العقارات</h2>
         </div>
@@ -1139,24 +1080,24 @@
         var swiper = new Swiper('.swiper-container', {
             slidesPerView: 1,
             spaceBetween: 10,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+            autoplay: {
+                disableOnInteraction: false,
             },
-            scrollbar: {
-                el: '.swiper-scrollbar',
-                draggable: true,
-            },
+            grabCursor: true,
             breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
                 768: {
                     slidesPerView: 2,
-                    spaceBetween: 20,
+                    spaceBetween: 40,
                 },
                 1024: {
                     slidesPerView: 3,
-                    spaceBetween: 30,
+                    spaceBetween: 50,
                 },
-            },
+            }
         });
 
 

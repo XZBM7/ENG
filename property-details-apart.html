@@ -201,7 +201,6 @@
             margin-top: 10px;
         }
 
-        /* Image modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -255,7 +254,6 @@
             cursor: pointer;
         }
 
-        /* Responsive styles */
         @media (min-width: 768px) {
             .property-details {
                 flex-direction: row;
@@ -346,6 +344,33 @@
         .modal-content:active {
             transform: scale(1.1);
         }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            line-height: 60px;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #0056b3;
+        }
+
+        .scroll-to-top i {
+            font-size: 24px;
+        }
     </style>
 </head>
 
@@ -416,6 +441,10 @@
         <i class="fas fa-building"></i>
     </header>
 
+    <div class="scroll-to-top" onclick="scrollToTop()"></div>
+    <i class="fas fa-chevron-up"></i>
+    </div>
+
     <footer>
         <div class="footer-container">
             <p>&copy; 2024 شركتك. جميع الحقوق محفوظة.</p>
@@ -433,6 +462,8 @@
             <a href="https://whatsapp.com" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
+
+
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImage">
@@ -440,6 +471,8 @@
         <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
         <div class="arrow right" onclick="changeSlide(1)">&#10095;</div>
     </div>
+
+
 
 
     <script>
@@ -514,7 +547,21 @@
             changeSlide(-1);
         });
 
+        window.addEventListener('scroll', function () {
+            const scrollToTopBtn = document.querySelector('.scroll-to-top');
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
 
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
 
 
     </script>

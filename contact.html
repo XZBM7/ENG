@@ -397,23 +397,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            var form = document.querySelector('#contactForm');
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                var name = document.querySelector('#name').value;
-                var phone = document.querySelector('#phone').value;
-                var message = document.querySelector('#message').value;
-
-                var namePattern = /^[أ-يa-zA-Z\s]+$/;
-                if (!namePattern.test(name)) {
-                    alert('الاسم يجب أن يحتوي على أحرف عربية أو إنجليزية فقط.');
-                    return;
-                }
-
-                var phonePattern = /^05\d{8}$/;
-                if (!phonePattern.test(phone)) {
-                    alert('رقم الهاتف يجب أن يبدأ بـ 05 ويتكون من 10 أرقام فقط.');
                     return;
                 }
 
@@ -425,17 +408,47 @@
                 var whatsappNumber = '0123456789';
                 var encodedMessage = encodeURIComponent(`اسم: ${name}\nرقم الهاتف: ${phone}\nرسالة: ${message}`);
                 var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    var form = document.querySelector('#contactForm');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-                window.open(whatsappUrl, '_blank');
-                form.reset();
+        var name = document.querySelector('#name').value;
+        var phone = document.querySelector('#phone').value;
+        var message = document.querySelector('#message').value;
 
-                var successMessage = document.querySelector('#message');
-                successMessage.style.display = 'block';
-                setTimeout(function () {
-                    successMessage.style.display = 'none';
-                }, 3000);
-            });
-        });
+        var namePattern = /^[أ-يa-zA-Z\s]+$/;
+        if (!namePattern.test(name)) {
+            alert('الاسم يجب أن يحتوي على أحرف عربية أو إنجليزية فقط.');
+            return;
+        }
+
+        var phonePattern = /^05\d{8}$/;
+        if (!phonePattern.test(phone)) {
+            alert('رقم الهاتف يجب أن يبدأ بـ 05 ويتكون من 10 أرقام فقط.');
+            return;
+        }
+
+        if (!message.trim()) {
+            alert('يرجى إدخال رسالة.');
+            return;
+        }
+
+        var whatsappNumber = '01125700310';
+        var encodedMessage = encodeURIComponent(`اسم: ${name}\nرقم الهاتف: ${phone}\nرسالة: ${message}`);
+        var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        window.open(whatsappUrl, '_blank');
+        form.reset();
+
+        var successMessage = document.querySelector('#message');
+        successMessage.style.display = 'block';
+        setTimeout(function () {
+            successMessage.style.display = 'none';
+            window.location.reload();
+        }, 3000);
+    });
+});
+
     </script>
 </body>
 
