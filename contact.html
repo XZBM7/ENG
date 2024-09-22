@@ -335,13 +335,13 @@
         <div class="contact-form">
             <h2>اترك لنا رسالة</h2>
             <form id="contactForm">
-                <label for="phone">رقم الهاتف:</label>
-                <input type="tel" id="phone" maxlength="10" name="phone" pattern="05\d{8}"
-                    title="رقم الهاتف يجب أن يبدأ بـ 05 ويتكون من 10 أرقام فقط." required>
-
                 <label for="name">الاسم:</label>
                 <input type="text" id="name" name="name" pattern="[أ-يa-zA-Z\s]+"
                     title="الاسم يجب أن يحتوي على أحرف عربية أو إنجليزية فقط." required>
+
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" maxlength="10" name="phone" pattern="05\d{8}"
+                        title="رقم الهاتف يجب أن يبدأ بـ 05 ويتكون من 10 أرقام فقط." required>
 
                 <label for="message">الرسالة:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
@@ -422,17 +422,22 @@
             return;
         }
 
-        var whatsappNumber = '+201125700310';
-        var encodedMessage = encodeURIComponent(`اسم: ${name}\nرقم الهاتف: ${phone}\nرسالة: ${message}`);
-        var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var message = document.getElementById('message').value;
 
-        window.open(whatsappUrl, '_blank');
-        form.reset();
+            var telegramUsername = 'B_H_M7';
+            var encodedMessage = encodeURIComponent(`اسم: ${name}\nرقم الهاتف: ${phone}\nرسالة: ${message}`);
+            var telegramUrl = `https://t.me/${telegramUsername}?text=${encodedMessage}`;
 
-        var successMessage = document.querySelector('#message');
-        successMessage.style.display = 'block';
+            window.open(telegramUrl, '_blank');
+            document.getElementById('messageForm').reset(); 
+
+            var successMessage = document.getElementById('message');
+            successMessage.style.display = 'block'; 
+        });
+
     });
-});
 
     </script>
 </body>
