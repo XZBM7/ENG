@@ -41,7 +41,6 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             background-color: #0056b3;
         }
@@ -64,11 +63,35 @@
             border-radius: 5px;
         }
 
-        .content {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 15px;
+            color: white;
+            background-color: #0056b3;
         }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+
+
 
         .available-properties {
             display: flex;
@@ -754,9 +777,11 @@
             margin: 20px 0 0 0;
             font-size: 30px;
         }
-        .swiper-button-next, .swiper-button-prev {
-    display: none;
-}
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none;
+        }
     </style>
 </head>
 
@@ -766,17 +791,19 @@
     </header>
 
     <nav>
-        <ul>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <ul id="nav-menu">
             <li><a href="contact.html">اتصل بنا</a></li>
             <li><a href="villas.html">الفلل</a></li>
             <li><a href="apartments.html">الشقق</a></li>
             <li><a href="news.html">اخر الاخبار </a></li>
             <li><a href="about.html">عن الشركة</a></li>
             <li><a href="#section-title">مشاريعنا</a></li>
-            <li><a href="#latest-properties-title">أحدث العقارات</a></li>
+            <li><a href="#latest-properties-title">احدث العقارات</a></li>
             <li><a href="index.html"> الرئيسية</a></li>
         </ul>
     </nav>
+
 
     <section class="banner">
         <img src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -950,7 +977,6 @@
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
 
-                <!--<div class="swiper-scrollbar"></div>-->
             </div>
 
             <div class="more-btn">
@@ -1091,6 +1117,12 @@
                 },
             }
         });
+
+        function toggleMenu() {
+            var menu = document.getElementById("nav-menu");
+            menu.classList.toggle("active");
+        }
+
 
 
     </script>
