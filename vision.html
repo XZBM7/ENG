@@ -70,12 +70,38 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        .section div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+
+        }
+        .section div p {
+            font-size: 25px;
+            justify-content: center;
+        }
 
         .section img {
-            width: 100%;
-            height: auto;
+            width: 425px;
+            height: 300px;
             border-radius: 10px;
             margin-bottom: 15px;
+        }
+
+        @media (max-width: 770px) {
+            .section div{
+                display: block;
+            }
+            .section img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                margin-bottom: 15px;
+            }
+            .section div p {
+                font-size: 15px;
+            }
         }
 
         footer {
@@ -129,19 +155,24 @@
 
     <div class="content">
         <a href="index.html" class="back-button">العودة إلى الصفحة الرئيسية</a>
-        <h1>رؤيتنا</h1>
         <div class="section">
-            <p>تتمثل رؤيتنا في أن نكون الشركة الرائدة في مجال العقارات من خلال تقديم حلول مبتكرة تلبي احتياجات عملائنا
-                بأعلى جودة. نحن نؤمن بأهمية الابتكار والاستدامة في جميع مشاريعنا، ونسعى لتحقيق التميز من خلال الالتزام
-                بأفضل الممارسات وتحقيق رضا عملائنا</p>
-            <img src="https://images.pexels.com/photos/5313173/pexels-photo-5313173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-            " alt="رؤيتنا">
+            <h2>رؤيتنا</h2>
+            <div>
+                <img src="https://images.pexels.com/photos/5313173/pexels-photo-5313173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+                " alt="رؤيتنا">
+                <p>تتمثل رؤيتنا في أن نكون الشركة الرائدة في مجال العقارات من خلال تقديم حلول مبتكرة تلبي احتياجات عملائنا
+                    بأعلى جودة. نحن نؤمن بأهمية الابتكار والاستدامة في جميع مشاريعنا، ونسعى لتحقيق التميز من خلال الالتزام
+                    بأفضل الممارسات وتحقيق رضا عملائنا</p>
+            </div>
         </div>
         <div class="section">
             <h2>توسيع آفاقنا</h2>
-            <p>نحن نهدف إلى التوسع في أسواق جديدة وتقديم خدمات جديدة تواكب تطورات السوق واحتياجات عملائنا المتغيرة.
-                سنواصل العمل على تحقيق رؤيتنا من خلال تبني أحدث التوجهات التكنولوجية وتقديم حلول مستدامة وفعالة</p>
-            <img src="https://images.pexels.com/photos/1552617/pexels-photo-1552617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="مستقبلنا">
+            <div>
+                <img src="https://images.pexels.com/photos/1552617/pexels-photo-1552617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="مستقبلنا">
+                <p>نحن نهدف إلى التوسع في أسواق جديدة وتقديم خدمات جديدة تواكب تطورات السوق واحتياجات عملائنا المتغيرة.
+                    سنواصل العمل على تحقيق رؤيتنا من خلال تبني أحدث التوجهات التكنولوجية وتقديم حلول مستدامة وفعالة</p>
+            </div>
+            
         </div>
     </div>
 
