@@ -357,7 +357,7 @@
             }
         ];
 
-        document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
         const latestProperties = document.getElementById('latest-properties');
         content.forEach(property => {
             const propertyElement = document.createElement('div');
@@ -389,31 +389,31 @@
         });
     });
 
-            function updateLikeButton(button, countSpan, id) {
-                let likeCount = parseInt(localStorage.getItem(`likeCount-${id}`) || '0', 10);
-                countSpan.textContent = likeCount;
+        function updateLikeButton(button, countSpan, id) {
+            let likeCount = parseInt(localStorage.getItem(`likeCount-${id}`) || '0', 10);
+            countSpan.textContent = likeCount;
 
-                if (localStorage.getItem(`liked-${id}`) === 'true') {
-                    button.classList.add('liked');
+            if (localStorage.getItem(`liked-${id}`) === 'true') {
+                button.classList.add('liked');
+            } else {
+                button.classList.remove('liked');
+            }
+
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                button.classList.toggle('liked');
+
+                if (button.classList.contains('liked')) {
+                    likeCount++;
                 } else {
-                    button.classList.remove('liked');
+                    likeCount--;
                 }
 
-                button.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    button.classList.toggle('liked');
-
-                    if (button.classList.contains('liked')) {
-                        likeCount++;
-                    } else {
-                        likeCount--;
-                    }
-
-                    countSpan.textContent = likeCount;
-                    localStorage.setItem(`likeCount-${id}`, likeCount.toString());
-                    localStorage.setItem(`liked-${id}`, button.classList.contains('liked').toString());
-                });
-            }
+                countSpan.textContent = likeCount;
+                localStorage.setItem(`likeCount-${id}`, likeCount.toString());
+                localStorage.setItem(`liked-${id}`, button.classList.contains('liked').toString());
+            });
+        }
 
             document.querySelectorAll('.favorite').forEach(button => {
                 const id = button.dataset.id;

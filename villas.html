@@ -319,7 +319,6 @@
     <div class="scroll-to-top" onclick="scrollToTop()">
         <i class="fas fa-chevron-up"></i>
     </div>
-
     <script>
         const content = [
             {
@@ -359,6 +358,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const latestProperties = document.getElementById('latest-properties');
+            console.log(latestProperties);
             content.forEach(property => {
                 const propertyElement = document.createElement('div');
                 propertyElement.classList.add('property');
