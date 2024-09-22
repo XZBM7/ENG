@@ -397,17 +397,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-                    return;
-                }
-
-                if (!message.trim()) {
-                    alert('يرجى إدخال رسالة.');
-                    return;
-                }
-
-                var whatsappNumber = '0123456789';
-                var encodedMessage = encodeURIComponent(`اسم: ${name}\nرقم الهاتف: ${phone}\nرسالة: ${message}`);
-                var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     var form = document.querySelector('#contactForm');
     form.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -442,10 +431,6 @@
 
         var successMessage = document.querySelector('#message');
         successMessage.style.display = 'block';
-        setTimeout(function () {
-            successMessage.style.display = 'none';
-            window.location.reload();
-        }, 3000);
     });
 });
 
