@@ -188,30 +188,7 @@
     <div class="content">
         <a href="index.html" class="back-button">العودة إلى الصفحة الرئيسية</a>
         <h1>خدماتنا</h1>
-        <div class="section">
-            <h2>خدمة التصميم الداخلي</h2>
-            <div>
-                <img src="https://imgs.search.brave.com/RiIc7Hi3nNmz2ZenfdS4W_nf1FiBUEBo4nOQPU9QwoE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9kZWNv/cmlvdXMuY29tL3B1/YmxpYy9ibG9ncy9N/YXkyMDIzLzMtaW50/ZXJpb3ItZGVzaWdu/LmpwZw" alt="تصميم داخلي">
-                <p>نقدم خدمات تصميم داخلي تشمل التخطيط والتصميم والإشراف على التنفيذ. نحن نحرص على تحويل رؤيتك إلى واقع من
-                    خلال تقديم تصاميم مبتكرة تتناسب مع ذوقك واحتياجاتك.</p>
-            </div>
-        </div>
-        <div class="section">
-            <h2>إدارة المشاريع</h2>
-            <div>
-                <img src="https://imgs.search.brave.com/OMSwAsj1AZzOEFht9CRMFzh9pp277z0rE1DWVn-c9c4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9rdW4u/YWNhZGVteS9ibG9n/cy93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8xMi8lRDglQTUl/RDglQUYlRDglQTcl/RDglQjElRDglQTkt/JUQ4JUE3JUQ5JTg0/JUQ5JTg1JUQ4JUI0/JUQ4JUE3JUQ4JUIx/JUQ5JThBJUQ4JUI5/LTEwMjR4NzI2Lmpw/Zw" alt="إدارة مشاريع">
-                <p>نقوم بإدارة مشاريع البناء والتطوير من البداية حتى النهاية. نضمن تحقيق أهداف المشروع ضمن الميزانية المحددة
-                    وفي الوقت المحدد من خلال فريق محترف ومؤهل.</p>
-            </div>
-        </div>
-        <div class="section">
-            <h2>استشارات عقارية</h2>
-            <div>
-                <img src="https://imgs.search.brave.com/kOrFlVXrOmpBA4RDEZDDNNtdiw0F_saVKuGev0yYo9c/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tYWhh/bGxncm91cC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjIv/MDIvJUQ4JUE3JUQ4/JUIzJUQ4JUFBJUQ4/JUI0JUQ4JUE3JUQ4/JUIxJUQ4JUE3JUQ4/JUFBLSVEOCVCOSVE/OSU4MiVEOCVBNyVE/OCVCMSVEOSU4QSVE/OCVBOS0lRDklODUl/RDglQUMlRDglQTcl/RDklODYlRDklOEEl/RDglQTktJUQ4JUFB/JUQ5JTgyJUQ4JUFG/JUQ5JTg1JUQ5JTg3/JUQ4JUE3LSVEOCVC/NCVEOCVCMSVEOSU4/MyVEOCVBOS0lRDkl/ODUlRDglQjMlRDkl/ODMlRDklODYtJUQ4/JUE3JUQ5JTg0JUQ4/JUI5JUQ5JTgyJUQ4/JUE3JUQ4JUIxJUQ5/JThBJUQ4JUE5LTEu/anBn
-                " alt="استشارات عقارية">
-                <p>نقدم استشارات عقارية شاملة تساعدك في اتخاذ قرارات مدروسة بشأن استثمارك في العقارات. نقدم لك المعلومات
-                    والنصائح التي تحتاجها لتحقيق أهدافك العقارية.</p>
-            </div>
+        <div id="section" class="section">
         </div>
     </div>
 
@@ -219,8 +196,53 @@
         <p>&copy; 2024 شركتك. جميع الحقوق محفوظة.</p>
         <a href="index.html">العودة إلى الصفحة الرئيسية</a>
     </footer>
+
     <script>
-          function toggleMenu() {
+
+        const content = [
+            {
+                id: 1,
+                title: "التصميم الداخلي",
+                image: "https://imgs.search.brave.com/RiIc7Hi3nNmz2ZenfdS4W_nf1FiBUEBo4nOQPU9QwoE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9kZWNv/cmlvdXMuY29tL3B1/YmxpYy9ibG9ncy9N/YXkyMDIzLzMtaW50/ZXJpb3ItZGVzaWdu/LmpwZw",
+                content: "نقدم خدمات تصميم داخلي تشمل التخطيط والتصميم والإشراف على التنفيذ. نحن نحرص على تحويل رؤيتك إلى واقع من خلال تقديم تصاميم مبتكرة تتناسب مع ذوقك واحتياجاتك."
+            },
+            {
+                id: 2,
+                title: "إدارة المشاريع",
+                image: "https://imgs.search.brave.com/OMSwAsj1AZzOEFht9CRMFzh9pp277z0rE1DWVn-c9c4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9rdW4u/YWNhZGVteS9ibG9n/cy93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8xMi8lRDglQTUl/RDglQUYlRDglQTcl/RDglQjElRDglQTkt/JUQ4JUE3JUQ5JTg0/JUQ5JTg1JUQ4JUI0/JUQ4JUE3JUQ4JUIx/JUQ5JThBJUQ4JUI5/LTEwMjR4NzI2Lmpw/Zw",
+                content: "نقوم بإدارة مشاريع البناء والتطوير من البداية حتى النهاية. نضمن تحقيق أهداف المشروع ضمن الميزانية المحددة وفي الوقت المحدد من خلال فريق محترف ومؤهل."
+            },
+            {
+                id: 3,
+                title: "استفسارات عقارية",
+                image: "https://imgs.search.brave.com/kOrFlVXrOmpBA4RDEZDDNNtdiw0F_saVKuGev0yYo9c/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tYWhh/bGxncm91cC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMjIv/MDIvJUQ4JUE3JUQ4/JUIzJUQ4JUFBJUQ4/JUI0JUQ4JUE3JUQ4/JUIxJUQ4JUE3JUQ4/JUFBLSVEOCVCOSVE/OSU4MiVEOCVBNyVE/OCVCMSVEOSU4QSVE/OCVBOS0lRDklODUl/RDglQUMlRDglQTcl/RDklODYlRDklOEEl/RDglQTktJUQ4JUFB/JUQ5JTgyJUQ4JUFG/JUQ5JTg1JUQ5JTg3/JUQ4JUE3LSVEOCVC/NCVEOCVCMSVEOSU4/MyVEOCVBOS0lRDkl/ODUlRDglQjMlRDkl/ODMlRDklODYtJUQ4/JUE3JUQ5JTg0JUQ4/JUI5JUQ5JTgyJUQ4/JUE3JUQ4JUIxJUQ5/JThBJUQ4JUE5LTEu/anBn",
+                content: "نقدم استشارات عقارية شاملة تساعدك في اتخاذ قرارات مدروسة بشأن استثمارك في العقارات. نقدم لك المعلومات والنصائح التي تحتاجها لتحقيق أهدافك العقارية."
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+        const myKeysValues = window.location.search;
+        const myParam = new URLSearchParams(myKeysValues);
+        const id = myParam.get('id'); 
+
+        const latestProperties = document.getElementById('section');
+        project = content.filter( (e) => e.id == id);
+        project.forEach(property => {
+            const header = document.createElement('h2');
+            header.innerText = `${property.title}`
+            const propertyElement = document.createElement('div');
+            propertyElement.innerHTML = `
+                <img src="${property.image}">
+                <p>${property.content}</p>
+            `;
+            latestProperties.appendChild(header);
+            latestProperties.appendChild(propertyElement);
+        });
+        });
+
+
+        function toggleMenu() {
             var menu = document.getElementById("nav-menu");
             menu.classList.toggle("active");
         }
