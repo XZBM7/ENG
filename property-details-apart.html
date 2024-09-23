@@ -437,24 +437,8 @@
                     <button class="next" onclick="changeSlide(1)">&#10095;</button>
                 </div>
             </div>
-            <div class="property-info">
-                <h1>شقة فاخرة للبيع</h1>
-                <p>هذه الشقة الفسيحة تحتوي على غرفتي نوم وحمام حديث، ومطبخ مجهز بالكامل، وتتميز بإطلالة رائعة على
-                    المدينة. موقعها المثالي بالقرب من المراكز التجارية والمطاعم يجعلها الخيار الأمثل للعيش.</p>
-                <div class="details">
-                    <p><span class="icon"><i class="fas fa-home"></i></span> 120 م²</p>
-                    <p><span class="icon"><i class="fas fa-bed"></i></span> 3 غرف نوم</p>
-                    <p><span class="icon"><i class="fas fa-bath"></i></span> 2 حمام</p>
-                    <p><span class="icon"><i class="fas fa-couch"></i></span> غرفة معيشة</p>
-                </div>
-                <p style="color: #29a846;" class="price">السعر: 300,000 ريال</p>
-                <div class="contact-section">
-                    <h3>للاستفسار:</h3>
-                    <div class="contact-buttons">
-                        <a href="tel:+1234567890"><i class="fas fa-phone"></i> اتصل بنا</a>
-                        <a href="https://wa.me/1234567890"><i class="fab fa-whatsapp"></i> واتس آب</a>
-                    </div>
-                </div>
+            <div id="info" class="property-info">
+                
             </div>
         </div>
 
@@ -508,6 +492,95 @@
 
 
     <script>
+
+        const content = [
+            {
+                image: "https://imgs.search.brave.com/vrS-HHDZwbqXdwO6wHXYB0nYenDJ6Kpv379Ay7lJAyw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxtcnNhbC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvTW9kZWxzLUZh/Y2FkZXMtVmlsbGFz/LmpwZw",
+                title: "شقة فاخرة في المدينة",
+                price: "300,000 ر.س",
+                area: "150 م²",
+                bedrooms: 3,
+                bathrooms: 2,
+                livingRooms: 1,
+                location: "الرياض",
+                id: 1
+            },
+            {
+                image: "https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn",
+                title: "شقة مريحة مع إطلالة",
+                price: "250,000 ر.س",
+                area: "120 م²",
+                bedrooms: 2,
+                bathrooms: 1,
+                livingRooms: 1,
+                location: "جدة",
+                id: 2
+            },
+            {
+                image: "https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn",
+                title: "شقة حديثة قريبة من المرافق",
+                price: "280,000 ر.س",
+                area: "130 م²",
+                bedrooms: 2,
+                bathrooms: 2,
+                livingRooms: 1,
+                location: "الدمام",
+                id: 3
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const myKeysValues = window.location.search;
+            const myParam = new URLSearchParams(myKeysValues);
+            const id = myParam.get('id'); 
+
+            const latestProperties = document.getElementById('info');
+            project = content.filter( (e) => e.id == id);
+            project.forEach(property => {
+                const header = document.createElement('h1');
+                header.innerText = `${property.title}`
+                
+                const paragraph1 = document.createElement('p');
+                paragraph1.innerText = "هذه الشقة الفسيحة تحتوي علي غرفتي نوم وحمام حديث، ومطبخ مجهز بالكامل، وتتميز بإطلالة رائعة علي المدينة. موقعها المثالي بالقرب من من المراكز التجارية والمطاعم يجعلها الخيار الامثل للعيش";
+                
+                const price = document.createElement('p');
+                price.innerText = `السعر: ${property.price} ريال`;
+                price.classList.add('price');
+                price.style.color = "#29a846";
+
+                const propertyElement = document.createElement('div');
+                propertyElement.classList.add('details');
+                propertyElement.innerHTML = `
+                            <p><span class="icon"><i class="fas fa-home"></i></span> 120 م²</p>
+                            <p><span class="icon"><i class="fas fa-bed"></i></span> 3 غرف نوم</p>
+                            <p><span class="icon"><i class="fas fa-bath"></i></span> 2 حمام</p>
+                            <p><span class="icon"><i class="fas fa-couch"></i></span> غرفة معيشة</p>
+                        <div class="contact-section">
+                            
+                        </div>
+                `;
+                
+                const contactSection = document.createElement('div');
+                contactSection.classList.add('contact-section');
+                contactSection.innerHTML = `
+                    <h3>للاستفسار:</h3>
+                    <div class="contact-buttons">
+                        <a href="tel:+1234567890"><i class="fas fa-phone"></i> اتصل بنا</a>
+                        <a href="https://wa.me/1234567890"><i class="fab fa-whatsapp"></i> واتس آب</a>
+                    </div>
+                `;
+
+                latestProperties.appendChild(header);
+                latestProperties.appendChild(paragraph1);
+                latestProperties.appendChild(propertyElement);
+                latestProperties.appendChild(price);
+                latestProperties.appendChild(contactSection);
+            });
+        });
+
+
+
         let slideIndex = 0;
 
         function showSlides() {
@@ -599,7 +672,6 @@
             var menu = document.getElementById("nav-menu");
             menu.classList.toggle("active");
         }
-
     </script>
 </body>
 
