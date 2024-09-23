@@ -27,6 +27,32 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1100px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                max-width: 900px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+        }
+
         header {
             background-color: #112031;
             color: white;
@@ -662,6 +688,7 @@
             height: 50vh;
             min-height: 300px;
             overflow: hidden;
+            margin-bottom: 20px;
         }
 
         .banner-image {
@@ -670,6 +697,7 @@
             object-fit: cover;
             object-position: center;
         }
+
 
         @media (max-width: 768px) {
             .banner {
@@ -714,8 +742,6 @@
                 transform: translate(-50%, -50%) scale(0.9);
             }
         }
-
-        
     </style>
 </head>
 
