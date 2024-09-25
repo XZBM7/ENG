@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل الشقة</title>
+    <title>Samaai | تفاصيل الفلة</title>
+    <link rel="icon" type="image/png" href="img/photo_2024-09-25_18-34-39.jpg"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <style>
@@ -19,10 +20,32 @@
         header {
             background-color: #112031;
             color: white;
-            padding: 20px;
+            padding: 15px 0;
             text-align: center;
             font-size: 24px;
             font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header img {
+            width: 20%;
+            height: auto;
+            max-height: 150px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            header img {
+                width: 30%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img {
+                width: 40%;
+            }
         }
 
         nav ul {
@@ -79,6 +102,7 @@
                 margin-bottom: 10px;
             }
         }
+
 
 
         .content {
@@ -404,19 +428,20 @@
 
 <body>
     <header>
-        <i class="fas fa-building"></i>
+        <img src="img/samaai.png" alt="شعار">
     </header>
+    
 
     <nav>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
         <ul id="nav-menu">            
-            <li><a href="contact.html">اتصل بنا</a></li>
-            <li><a href="villas.html">الفلل</a></li>
-            <li><a href="apartments.html">الشقق</a></li>
-            <li><a href="news.html">اخر الاخبار </a></li>
-            <li><a href="about.html">عن الشركة</a></li>
-            <li><a href="projects.html">مشاريعنا</a></li>
-            <li><a href="index.html"> الرئيسية</a></li>
+            <li><a href="contact.html"><i class="fa fa-phone"></i> اتصل بنا</a></li>
+            <li><a href="villas.html"><i class="fa fa-home"></i> الفلل</a></li>
+            <li><a href="apartments.html"><i class="fa fa-building"></i> الشقق</a></li>
+            <li><a href="news.html"><i class="fa fa-newspaper"></i> آخر الأخبار</a></li>
+            <li><a href="about.html"><i class="fa fa-info-circle"></i> عن الشركة</a></li>
+            <li><a href="projects.html"><i class="fa fa-briefcase"></i> مشاريعنا</a></li>
+            <li><a href="index.html"><i class="fa fa-home"></i> الرئيسية</a></li>
         </ul>
     </nav>
 
@@ -429,7 +454,7 @@
                             alt="صورة الشقة" class="active">
                         <img src="https://imgs.search.brave.com/f2QwxcbC-XmsXVODY9VlO8twseDxY5j9UxZ7WNoyoJ0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vp/bm9nbDZhNm1SSjBx/RUp4Ym1EbVV4VkEt/azRtbUlLX0NPWDFs/VHI2dXVHa21TWXl3/bm4wcFAxcUxOcTlI/akp1cHYxcGdVSENp/SVk0aUJqVE5CY3dw/Zk5Qb2hxby1vcWJE/empPaHU2M085a3ZK/MmVqdmtNUDNqLWQ5/Z3lfbTBIbzAwdzZU/YWxxQmF4MXMvdzQw/MC1oMjg0LXJ3LzI5/NzIuanBn"" alt="
                             صورة الشقة 2">
-                        <img src="https://imgs.search.brave.com/vrS-HHDZwbqXdwO6wHXYB0nYenDJ6Kpv379Ay7lJAyw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxtcnNhbC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvTW9kZWxzLUZh/Y2FkZXMtVmlsbGFz/LmpwZw"
+                        <img src="https://imgs.search.brave.com/VWtMnwf1GV-6Xu6eSQJr9XdQ-q1XgiycheesZZnkOsg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vo/eWM4TlkwVVBZTlVy/NjY0cFphTm5HNkhL/SURsNDJqZDJHZkt6/S3NpZDNCcWpjYjlF/YUs4cVltRUVza2Yy/Q0lycmFhNHV5M1d1/QTdVYjR4c2NnUDJG/eGYzN2NBd2Y3NzNo/SnZIem52Rm5DZnRa/MmxDbFlGTGdlVXo1/VEF1ZzFpN2Q4S0d2/M3dBdDlUZjQvdzQw/MC1oMjU1LXJ3LzIz/NzAuanBn"
                             alt="صورة الشقة 3">
                     </div>
                     <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
@@ -437,7 +462,6 @@
                 </div>
             </div>
             <div id="info" class="property-info">
-                
                 
             </div>
         </div>
@@ -451,32 +475,36 @@
                 allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
-    <header>
-        <i class="fas fa-building"></i>
-    </header>
-
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2024 شركتك. جميع الحقوق محفوظة.</p>
-            <hr>
-            <div class="footer-links">
-                <a href="contact.html" class="footer-link">اتصل بنا</a>
-                <a href="disclaimer.html" class="footer-link">إخلاء مسؤولية</a>
-                <a href="terms.html" class="footer-link">الشروط والأحكام</a>
-            </div>
-            <hr>
-        </div>
-        <div class="social-media">
-            <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://whatsapp.com" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-        </div>
-    </footer>
+   
 
     <div class="scroll-to-top" onclick="scrollToTop()">
-        <i class="fas fa-chevron-up"></i>
-    </div>
+    <i class="fas fa-chevron-up"></i>
+</div>
+
     
+
+<header>
+    <img src="img/samaai.png" alt="شعار">
+</header>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Samaai جميع الحقوق محفوظة.</p>
+        <hr>
+        <div class="footer-links">
+            <a href="contact.html" class="footer-link">اتصل بنا</a>
+            <a href="disclaimer.html" class="footer-link">إخلاء مسؤولية</a>
+            <a href="terms.html" class="footer-link">الشروط والأحكام</a>
+        </div>
+        <hr>
+    </div>
+    <div class="social-media">
+        <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://whatsapp.com" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</footer>
+
 
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
@@ -487,100 +515,95 @@
     </div>
 
 
+
+
     <script>
 
-    const content = [
-        {
-            image: "https://imgs.search.brave.com/VWtMnwf1GV-6Xu6eSQJr9XdQ-q1XgiycheesZZnkOsg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vo/eWM4TlkwVVBZTlVy/NjY0cFphTm5HNkhL/SURsNDJqZDJHZkt6/S3NpZDNCcWpjYjlF/YUs4cVltRUVza2Yy/Q0lycmFhNHV5M1d1/QTdVYjR4c2NnUDJG/eGYzN2NBd2Y3NzNo/SnZIem52Rm5DZnRa/MmxDbFlGTGdlVXo1/VEF1ZzFpN2Q4S0d2/M3dBdDlUZjQvdzQw/MC1oMjU1LXJ3LzIz/NzAuanBn",
-            title: "شقة فاخرة في المدينة",
-            price: "300,000 ر.س",
-            area: "150 م²",
-            bedrooms: 3,
-            bathrooms: 2,
-            livingRooms: 1,
-            location: "الرياض",
-            id: 1
-        },
-        {
-            image: "https://imgs.search.brave.com/f2QwxcbC-XmsXVODY9VlO8twseDxY5j9UxZ7WNoyoJ0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vp/bm9nbDZhNm1SSjBx/RUp4Ym1EbVV4VkEt/azRtbUlLX0NPWDFs/VHI2dXVHa21TWXl3/bm4wcFAxcUxOcTlI/akp1cHYxcGdVSENp/SVk0aUJqVE5CY3dw/Zk5Qb2hxby1vcWJE/empPaHU2M085a3ZK/MmVqdmtNUDNqLWQ5/Z3lfbTBIbzAwdzZU/YWxxQmF4MXMvdzQw/MC1oMjg0LXJ3LzI5/NzIuanBn",
-            title: "شقة مريحة مع إطلالة",
-            price: "250,000 ر.س",
-            area: "120 م²",
-            bedrooms: 2,
-            bathrooms: 1,
-            livingRooms: 1,
-            location: "جدة",
-            id: 2
-        },
-        {
-            image: "https://imgs.search.brave.com/vrS-HHDZwbqXdwO6wHXYB0nYenDJ6Kpv379Ay7lJAyw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxtcnNhbC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvTW9kZWxzLUZh/Y2FkZXMtVmlsbGFz/LmpwZw",
-            title: "شقة حديثة قريبة من المرافق",
-            price: "280,000 ر.س",
-            area: "130 م²",
-            bedrooms: 2,
-            bathrooms: 2,
-            livingRooms: 1,
-            location: "الدمام",
-            id: 3
-        }
-    ];
+        const content = [
+            {
+                image: "https://imgs.search.brave.com/vrS-HHDZwbqXdwO6wHXYB0nYenDJ6Kpv379Ay7lJAyw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxtcnNhbC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvTW9kZWxzLUZh/Y2FkZXMtVmlsbGFz/LmpwZw",
+                title: "شقة فاخرة في المدينة",
+                price: "300,000 ر.س",
+                area: "150 م²",
+                bedrooms: 3,
+                bathrooms: 2,
+                livingRooms: 1,
+                location: "الرياض",
+                id: 1
+            },
+            {
+                image: "https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn",
+                title: "شقة مريحة مع إطلالة",
+                price: "250,000 ر.س",
+                area: "120 م²",
+                bedrooms: 2,
+                bathrooms: 1,
+                livingRooms: 1,
+                location: "جدة",
+                id: 2
+            },
+            {
+                image: "https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn",
+                title: "شقة حديثة قريبة من المرافق",
+                price: "280,000 ر.س",
+                area: "130 م²",
+                bedrooms: 2,
+                bathrooms: 2,
+                livingRooms: 1,
+                location: "الدمام",
+                id: 3
+            }
+        ];
 
-    document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
 
-        const myKeysValues = window.location.search;
-        const myParam = new URLSearchParams(myKeysValues);
-        const id = myParam.get('id'); 
+            const myKeysValues = window.location.search;
+            const myParam = new URLSearchParams(myKeysValues);
+            const id = myParam.get('id'); 
 
-        const latestProperties = document.getElementById('info');
-        project = content.filter( (e) => e.id == id);
-        project.forEach(property => {
-            const header = document.createElement('h1');
-            header.innerText = `${property.title}`
-            
-            const paragraph1 = document.createElement('p');
-            paragraph1.innerText = "هذه الشقة الفسيحة تحتوي علي غرفتي نوم وحمام حديث، ومطبخ مجهز بالكامل، وتتميز بإطلالة رائعة علي المدينة. موقعها المثالي بالقرب من من المراكز التجارية والمطاعم يجعلها الخيار الامثل للعيش";
-            
-            const price = document.createElement('p');
-            price.innerText = `السعر: ${property.price} ريال`;
-            price.classList.add('price');
-            price.style.color = "#29a846";
+            const latestProperties = document.getElementById('info');
+            project = content.filter( (e) => e.id == id);
+            project.forEach(property => {
+                const header = document.createElement('h1');
+                header.innerText = `${property.title}`
+                
+                const paragraph1 = document.createElement('p');
+                paragraph1.innerText = "هذه الشقة الفسيحة تحتوي علي غرفتي نوم وحمام حديث، ومطبخ مجهز بالكامل، وتتميز بإطلالة رائعة علي المدينة. موقعها المثالي بالقرب من من المراكز التجارية والمطاعم يجعلها الخيار الامثل للعيش";
+                
+                const price = document.createElement('p');
+                price.innerText = `السعر: ${property.price} ريال`;
+                price.classList.add('price');
+                price.style.color = "#29a846";
 
-            const propertyElement = document.createElement('div');
-            propertyElement.classList.add('details');
-            propertyElement.innerHTML = `
-                        <p><span class="icon"><i class="fas fa-home"></i></span> 120 م²</p>
-                        <p><span class="icon"><i class="fas fa-bed"></i></span> 3 غرف نوم</p>
-                        <p><span class="icon"><i class="fas fa-bath"></i></span> 2 حمام</p>
-                        <p><span class="icon"><i class="fas fa-couch"></i></span> غرفة معيشة</p>
-                    <div class="contact-section">
-                        
+                const propertyElement = document.createElement('div');
+                propertyElement.classList.add('details');
+                propertyElement.innerHTML = `
+                            <p><span class="icon"><i class="fas fa-home"></i></span> 120 م²</p>
+                            <p><span class="icon"><i class="fas fa-bed"></i></span> 3 غرف نوم</p>
+                            <p><span class="icon"><i class="fas fa-bath"></i></span> 2 حمام</p>
+                            <p><span class="icon"><i class="fas fa-couch"></i></span> غرفة معيشة</p>
+                        <div class="contact-section">
+                            
+                        </div>
+                `;
+                
+                const contactSection = document.createElement('div');
+                contactSection.classList.add('contact-section');
+                contactSection.innerHTML = `
+                    <h3>للاستفسار:</h3>
+                    <div class="contact-buttons">
+                        <a href="tel:+1234567890"><i class="fas fa-phone"></i> اتصل بنا</a>
+                        <a href="https://wa.me/1234567890"><i class="fab fa-whatsapp"></i> واتس آب</a>
                     </div>
-            `;
-            
-            const contactSection = document.createElement('div');
-            contactSection.classList.add('contact-section');
-            contactSection.innerHTML = `
-                <h3>للاستفسار:</h3>
-                <div class="contact-buttons">
-                    <a href="tel:+1234567890"><i class="fas fa-phone"></i> اتصل بنا</a>
-                    <a href="https://wa.me/1234567890"><i class="fab fa-whatsapp"></i> واتس آب</a>
-                </div>
-            `;
+                `;
 
-            latestProperties.appendChild(header);
-            latestProperties.appendChild(paragraph1);
-            latestProperties.appendChild(propertyElement);
-            latestProperties.appendChild(price);
-            latestProperties.appendChild(contactSection);
-            
+                latestProperties.appendChild(header);
+                latestProperties.appendChild(paragraph1);
+                latestProperties.appendChild(propertyElement);
+                latestProperties.appendChild(price);
+                latestProperties.appendChild(contactSection);
+            });
         });
-    });
-
-
-
-
-
-
 
 
 
@@ -655,7 +678,6 @@
             changeSlide(-1);
         });
 
-
         window.addEventListener('scroll', function () {
             const scrollToTopBtn = document.querySelector('.scroll-to-top');
             if (window.scrollY > 300) {
@@ -671,12 +693,12 @@
                 behavior: 'smooth'
             });
         }
+
         function toggleMenu() {
             var menu = document.getElementById("nav-menu");
             menu.classList.toggle("active");
         }
     </script>
-
 </body>
 
 </html>

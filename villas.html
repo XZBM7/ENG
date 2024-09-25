@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الفلل</title>
+    <title>Samaai | الفلل</title>
+    <link rel="icon" type="image/png" href="img/photo_2024-09-25_18-34-39.jpg">     <link rel="icon" type="image/png" href="img/samaai.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -19,12 +20,33 @@
         header {
             background-color: #112031;
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             text-align: center;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
+        header img {
+            width: 20%;
+            height: auto;
+            max-height: 150px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            header img {
+                width: 30%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header img {
+                width: 40%;
+            }
+        }
         nav ul {
             list-style: none;
             margin: 0;
@@ -79,6 +101,7 @@
                 margin-bottom: 10px;
             }
         }
+
 
 
 
@@ -307,18 +330,21 @@
 </head>
 
 <body>
+
     <header>
-        <i class="fas fa-building"></i>
+        <img src="img/samaai.png" alt="شعار">
     </header>
+
     <nav>
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-        <ul id="nav-menu">            
-            <li><a href="contact.html">اتصل بنا</a></li>
-            <li><a href="apartments.html">الشقق</a></li>
-            <li><a href="news.html">اخر الاخبار </a></li>
-            <li><a href="about.html">عن الشركة</a></li>
-            <li><a href="#projects">مشاريعنا</a></li>
-            <li><a href="index.html"> الرئيسية</a></li>
+        <ul id="nav-menu">           
+            <li><a href="contact.html"><i class="fa fa-phone"></i> اتصل بنا</a></li>
+            <li><a href="apartments.html"><i class="fa fa-building"></i> الشقق</a></li>
+            <li><a href="news.html"><i class="fa fa-newspaper"></i> آخر الأخبار</a></li>
+            <li><a href="about.html"><i class="fa fa-info-circle"></i> عن الشركة</a></li>
+            <li><a href="projects.html"><i class="fa fa-briefcase"></i> مشاريعنا</a></li>
+            <li><a href="index.html"><i class="fa fa-home"></i> الرئيسية</a></li>
+            
         </ul>
     </nav>
 
@@ -328,9 +354,13 @@
         </div>
     </div>
 
+    <header>
+        <img src="img/samaai.png" alt="شعار">
+    </header>
+
     <footer>
         <div class="footer-container">
-            <p>&copy; 2024 شركتك. جميع الحقوق محفوظة.</p>
+            <p>&copy; 2024 Samaai جميع الحقوق محفوظة.</p>
             <hr>
             <div class="footer-links">
                 <a href="contact.html" class="footer-link">اتصل بنا</a>
@@ -345,14 +375,14 @@
             <a href="https://whatsapp.com" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
-
     <div class="scroll-to-top" onclick="scrollToTop()">
         <i class="fas fa-chevron-up"></i>
     </div>
+
     <script>
         const content = [
             {
-                image: "https://imgs.search.brave.com/VWtMnwf1GV-6Xu6eSQJr9XdQ-q1XgiycheesZZnkOsg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vo/eWM4TlkwVVBZTlVy/NjY0cFphTm5HNkhL/SURsNDJqZDJHZkt6/S3NpZDNCcWpjYjlF/YUs4cVltRUVza2Yy/Q0lycmFhNHV5M1d1/QTdVYjR4c2NnUDJG/eGYzN2NBd2Y3NzNo/SnZIem52Rm5DZnRa/MmxDbFlGTGdlVXo1/VEF1ZzFpN2Q4S0d2/M3dBdDlUZjQvdzQw/MC1oMjU1LXJ3LzIz/NzAuanBn",
+                image: "https://imgs.search.brave.com/vrS-HHDZwbqXdwO6wHXYB0nYenDJ6Kpv379Ay7lJAyw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxtcnNhbC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvTW9kZWxzLUZh/Y2FkZXMtVmlsbGFz/LmpwZw",
                 title: "شقة فاخرة في المدينة",
                 price: "300,000 ر.س",
                 area: "150 م²",
@@ -363,7 +393,7 @@
                 id: 1
             },
             {
-                image: "https://imgs.search.brave.com/f2QwxcbC-XmsXVODY9VlO8twseDxY5j9UxZ7WNoyoJ0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/Z2VyLmdvb2dsZXVz/ZXJjb250ZW50LmNv/bS9pbWcvYi9SMjl2/WjJ4bC9BVnZYc0Vp/bm9nbDZhNm1SSjBx/RUp4Ym1EbVV4VkEt/azRtbUlLX0NPWDFs/VHI2dXVHa21TWXl3/bm4wcFAxcUxOcTlI/akp1cHYxcGdVSENp/SVk0aUJqVE5CY3dw/Zk5Qb2hxby1vcWJE/empPaHU2M085a3ZK/MmVqdmtNUDNqLWQ5/Z3lfbTBIbzAwdzZU/YWxxQmF4MXMvdzQw/MC1oMjg0LXJ3LzI5/NzIuanBn",
+                image: "https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn",
                 title: "شقة مريحة مع إطلالة",
                 price: "250,000 ر.س",
                 area: "120 م²",
@@ -374,7 +404,7 @@
                 id: 2
             },
             {
-                image: "https://imgs.search.brave.com/vrS-HHDZwbqXdwO6wHXYB0nYenDJ6Kpv379Ay7lJAyw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YWxtcnNhbC5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MTEvTW9kZWxzLUZh/Y2FkZXMtVmlsbGFz/LmpwZw",
+                image: "https://imgs.search.brave.com/whBTgQ7EbBNIvSBWRszLH1N4aS7I1_3mvxEr66sqazE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zYWFk/aWhnLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8wMy8y/MjIyLTIuanBn",
                 title: "شقة حديثة قريبة من المرافق",
                 price: "280,000 ر.س",
                 area: "130 م²",
@@ -386,63 +416,63 @@
             }
         ];
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const latestProperties = document.getElementById('latest-properties');
-            console.log(latestProperties);
-            content.forEach(property => {
-                const propertyElement = document.createElement('div');
-                propertyElement.classList.add('property');
-                propertyElement.innerHTML = `
-                    <a href="property-details-villas.html?id=${property.id}">
-                        <img src="${property.image}" alt="${property.title}">
-                        <div class="property-info">
-                            <h2>${property.title}</h2>
-                            <p class="price">${property.price}</p>
-                            <hr>
-                            <div class="details">
-                                <p><i class="fas fa-expand-arrows-alt icon"></i> المساحة: ${property.area}</p>
-                                <p><i class="fas fa-bed icon"></i> غرف النوم: ${property.bedrooms}</p>
-                                <p><i class="fas fa-bath icon"></i> الحمامات: ${property.bathrooms}</p>
-                                <p><i class="fas fa-couch icon"></i> غرف المعيشة: ${property.livingRooms}</p>
-                                <p><i class="fas fa-map-marker-alt icon"></i> الموقع: ${property.location}</p>
-                            </div>
-                            <div class="contact-buttons">
-                                <a href="tel:1234567890" class="phone" title="اتصل بنا"><i class="fas fa-phone-alt"></i></a>
-                                <a href="https://wa.me/1234567890" class="whatsapp" title="تواصل عبر واتساب"><i class="fab fa-whatsapp"></i></a>
-                                <a href="#" class="favorite" title="إضافة إلى المفضلة" data-id="${property.id}"><i class="fas fa-thumbs-up"></i></a>
-                                <span id="like-count-${property.id}">0</span>
-                            </div>
+    document.addEventListener('DOMContentLoaded', () => {
+        const latestProperties = document.getElementById('latest-properties');
+        content.forEach(property => {
+            const propertyElement = document.createElement('div');
+            propertyElement.classList.add('property');
+            propertyElement.innerHTML = `
+                <a href="property-details-apart.html?id=${property.id}">
+                    <img src="${property.image}" alt="${property.title}">
+                    <div class="property-info">
+                        <h2>${property.title}</h2>
+                        <p class="price">${property.price}</p>
+                        <hr>
+                        <div class="details">
+                            <p><i class="fas fa-expand-arrows-alt icon"></i> المساحة: ${property.area}</p>
+                            <p><i class="fas fa-bed icon"></i> غرف النوم: ${property.bedrooms}</p>
+                            <p><i class="fas fa-bath icon"></i> الحمامات: ${property.bathrooms}</p>
+                            <p><i class="fas fa-couch icon"></i> غرف المعيشة: ${property.livingRooms}</p>
+                            <p><i class="fas fa-map-marker-alt icon"></i> الموقع: ${property.location}</p>
                         </div>
-                    </a>
-                `;
-                latestProperties.appendChild(propertyElement);
-            });
+                        <div class="contact-buttons">
+                            <a href="tel:1234567890" class="phone" title="اتصل بنا"><i class="fas fa-phone-alt"></i></a>
+                            <a href="https://wa.me/1234567890" class="whatsapp" title="تواصل عبر واتساب"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="favorite" title="إضافة إلى المفضلة" data-id="${property.id}"><i class="fas fa-thumbs-up"></i></a>
+                            <span id="like-count-${property.id}">0</span>
+                        </div>
+                    </div>
+                </a>
+            `;
+            latestProperties.appendChild(propertyElement);
+        });
+    });
 
-            function updateLikeButton(button, countSpan, id) {
-                let likeCount = parseInt(localStorage.getItem(`likeCount-${id}`) || '0', 10);
-                countSpan.textContent = likeCount;
+        function updateLikeButton(button, countSpan, id) {
+            let likeCount = parseInt(localStorage.getItem(`likeCount-${id}`) || '0', 10);
+            countSpan.textContent = likeCount;
 
-                if (localStorage.getItem(`liked-${id}`) === 'true') {
-                    button.classList.add('liked');
+            if (localStorage.getItem(`liked-${id}`) === 'true') {
+                button.classList.add('liked');
+            } else {
+                button.classList.remove('liked');
+            }
+
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                button.classList.toggle('liked');
+
+                if (button.classList.contains('liked')) {
+                    likeCount++;
                 } else {
-                    button.classList.remove('liked');
+                    likeCount--;
                 }
 
-                button.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    button.classList.toggle('liked');
-
-                    if (button.classList.contains('liked')) {
-                        likeCount++;
-                    } else {
-                        likeCount--;
-                    }
-
-                    countSpan.textContent = likeCount;
-                    localStorage.setItem(`likeCount-${id}`, likeCount.toString());
-                    localStorage.setItem(`liked-${id}`, button.classList.contains('liked').toString());
-                });
-            }
+                countSpan.textContent = likeCount;
+                localStorage.setItem(`likeCount-${id}`, likeCount.toString());
+                localStorage.setItem(`liked-${id}`, button.classList.contains('liked').toString());
+            });
+        }
 
             document.querySelectorAll('.favorite').forEach(button => {
                 const id = button.dataset.id;
@@ -452,7 +482,6 @@
                     updateLikeButton(button, countSpan, id);
                 }
             });
-        });
 
         function scrollToTop() {
             window.scrollTo({
